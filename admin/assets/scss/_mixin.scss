@@ -1,0 +1,39 @@
+@mixin mq($value) {
+    @if $value== 'xxl' {
+      @media (max-width: 1600px) {
+        @content;
+      }
+    }
+    @if $value== 'xl' {
+      @media (max-width: 1399px) {
+        @content;
+      }
+    }
+    @if $value== 'lg' {
+      @media (max-width: 1199px) {
+        @content;
+      }
+    }
+    @if $value== 'md' {
+      @media (max-width: 992px) {
+        @content;
+      }
+    }
+    @if $value== 'xs' {
+      @media (max-width: 767.98px) {
+        @content;
+      }
+    }
+    @if $value== 'sm' {
+      @media (max-width: 575.98px) {
+        @content;
+      }
+    }
+  }
+ 
+  //background image
+  @mixin bgImg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

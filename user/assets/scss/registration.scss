@@ -1,0 +1,47 @@
+@import 'mixins';
+.registration-area{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 50px 0 100px 0;
+    height: 100%;
+    
+}
+.form{
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: $thmClr;
+    color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    h2{
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+        padding: 20px;
+        background-color: $thmBg;
+       
+    }
+}
+.form-inner{
+    padding: 30px;
+    input{
+        max-width: 400px;
+    }
+    label{
+        font-weight: bold;
+        @include mq(xs){
+            margin-bottom: 10px;
+        }
+    }
+    button , a{
+        background-color: $thmBg;
+        color: #fff;
+    }
+}
+.input-wrap{
+    display: flex;
+    justify-content: space-between;
+    @include mq(xs){
+        flex-direction: column;
+    }
+}

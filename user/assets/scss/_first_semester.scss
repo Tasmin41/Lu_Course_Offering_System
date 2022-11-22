@@ -1,0 +1,20 @@
+table.dataTable.no-footer {
+    border-bottom: 1px solid $thmBg;
+}
+.c-code{
+    color: $thmClr;
+    font-weight: bold;
+}
+.table-title{
+    font-weight: bold;
+    color: $thmBg;
+    margin: 50px 0;
+    text-align: center;
+}
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before, table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+
+    background-color: $thmBg;
+}
+.table{
+    margin-bottom: 50px;
+}
