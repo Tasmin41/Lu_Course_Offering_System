@@ -34,10 +34,8 @@ if(isset($_POST["submit"]))
     $item1 = mysqli_real_escape_string($connect, $data[0]);  
     $item2 = mysqli_real_escape_string($connect, $data[1]);
     $item3 = mysqli_real_escape_string($connect, $data[2]);  
-    $item4 = mysqli_real_escape_string($connect, $data[3]);
-    $item5 = mysqli_real_escape_string($connect, $data[4]);  
 
-    $query = "INSERT into batch_52(course_code, course_title,credit,offer,semester) values('$item1','$item2','$item3','$item4','$item5')";
+    $query = "INSERT into batch_52(course_code, course_title,credit) values('$item1','$item2','$item3')";
     mysqli_query($connect, $query);
    }
    fclose($handle);
