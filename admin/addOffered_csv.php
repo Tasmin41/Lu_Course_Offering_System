@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Syllabus</title>
+    <title>Add Offered Course using csv</title>
     <link rel="stylesheet" href="css/data-table.css">
     <!-- bootsrap -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -19,27 +19,32 @@
 </head>
 <body>   
 <div class="container">
-<h3 align="center">Import Syllabus from CSV File</h3><br />
+<h3 align="center">Import course sheet from CSV File</h3><br />
 <?php  
-$connect = mysqli_connect("localhost", "root", "", "finalyear_project");
+$connect2 = mysqli_connect("localhost", "root", "", "finalyear_project");
 if(isset($_POST["submit"]))
 {
  if($_FILES['file']['name'])
  {
-  $filename = explode(".", $_FILES['file']['name']);
-  if($filename[1] == 'csv')
+  $filename2 = explode(".", $_FILES['file']['name']);
+  if($filename2[1] == 'csv')
   {
    $handle = fopen($_FILES['file']['tmp_name'], "r");
-   while($data = fgetcsv($handle))
+   while($data2 = fgetcsv($handle))
    {
-    $item1 = mysqli_real_escape_string($connect, $data[0]);  
-    $item2 = mysqli_real_escape_string($connect, $data[1]);
-    $item3 = mysqli_real_escape_string($connect, $data[2]);    
-    $query = "INSERT into batch_50(course_code, course_title,credit) values('$item1','$item2','$item3')";
-    mysqli_query($connect, $query);
+    $batch_section = mysqli_real_escape_string($connect2, $data2[0]);  
+    $course_code = mysqli_real_escape_string($connect2, $data2[1]);
+    $course_title = mysqli_real_escape_string($connect2, $data2[2]);  
+    $credit = mysqli_real_escape_string($connect2, $data2[3]);  
+    $no_of_class = mysqli_real_escape_string($connect2, $data2[4]);//
+    $duration = mysqli_real_escape_string($connect2, $data2[5]);
+    $week_class = mysqli_real_escape_string($connect2, $data2[6]);
+    $query2 = "INSERT into list_of_offered_course2(batch_section,course_code,course_title,credit,no_of_class,duration,class_week) values('$batch_section','$course_code','$course_title','$credit','$no_of_class','$duration','$week_class')";//
+    mysqli_query($connect2, $query2);
    }
    fclose($handle);
-   echo "<script>location.href='batch50_list.php'</script>";
+   echo "<script>location.href='offered_course_list.php'</script>";
+
   }
  }
 }

@@ -14,10 +14,22 @@
 		dataTable : () =>{
             $('#example').DataTable({
           responsive: false,
+		  "pageLength": 50,
           "paging": true,
           "info": false,
-        	"searching": true,				
+        	"searching": true,	
+			"pageLength": 50,
+			"lengthMenu": [ 10, 25, 50, 75, 100 ],			
       });
+	//   $('#teacher_table').DataTable({
+	// 	responsive: false,
+	// 	"pageLength": 50,
+	// 	"paging": false,
+	// 	"info": false,
+	// 	  "searching": false,	
+	// 	  "pageLength": 50,
+	// 	  "lengthMenu": [ 10, 25, 50, 75, 100 ],			
+	// });
       },
 
 		aosEnimation:() =>{
