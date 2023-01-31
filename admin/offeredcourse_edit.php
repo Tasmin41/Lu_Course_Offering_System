@@ -154,7 +154,7 @@
                     $duration=$_POST['duration'];
                     $classWeek=$_POST['class_week'];
 
-                    $updateQuery ="UPDATE list_of_offered_course2 SET `batch_section`= '$batchSec', `course_code`= '$courseCode',`course_title`= '$courseTitle',`prerequisite`= '$prerequisite',`conducting_department`= '$department',`no_of_students`= '$students',`teacher`='$teacher',`no_of_class`= '$noOfclass',`duration`= '$duration',`class_week`='$classWeek' WHERE id = '$id'";
+                    $updateQuery ="UPDATE list_of_offered_course2 SET `batch_section`= '$batchSec', `course_code`= '$courseCode',`course_title`= '$courseTitle',`credit`= '$credit',`prerequisite`= '$prerequisite',`conducting_department`= '$department',`no_of_students`= '$students',`teacher`='$teacher',`no_of_class`= '$noOfclass',`duration`= '$duration',`class_week`='$classWeek' WHERE id = '$id'";
                     if(mysqli_query($conn,$updateQuery)){
                         // echo "<script>alert('Course Updated!!! !!')</script>";
                         echo "<script>location.href='offered_course_list.php'</script>";
