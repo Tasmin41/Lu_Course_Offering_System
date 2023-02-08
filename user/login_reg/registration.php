@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
         <!-- font awesom -->
-        <link rel="stylesheet" href="assets/css/font-awesom/css/all.min.css">
+        <link rel="stylesheet" href="../assets/css/font-awesom/css/all.min.css">
         <!-- bootsrap -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
         <!--magnific css-->
-        <link rel="stylesheet" href="assets/css/magnific.css">
+        <link rel="stylesheet" href="../assets/css/magnific.css">
         <!--owl-carosol-->
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
     
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
-    <section class="registration-area" style="background-image:url('./assets/img/jess-bailey-l3N9Q27zULw-unsplash.jpg');">
+    <section class="registration-area" style="background-image:url('../assets/img/jess-bailey-l3N9Q27zULw-unsplash.jpg');">
         <div class="container">
             <div class="form">
                 <form action="insert.php" method="post">
@@ -37,9 +37,9 @@
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/magnific.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/magnific.min.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>

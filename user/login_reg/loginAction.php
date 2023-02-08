@@ -10,7 +10,7 @@
             if(mysqli_num_rows($result)>0){
                 session_start();
                 $_SESSION['email']=$l_email;
-                echo "<script>location.href='home.php'</script>";
+                echo "<script>location.href='../home.php'</script>";
 
             }
             else{

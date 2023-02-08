@@ -65,24 +65,24 @@
                                 <a href="#">Courses <i class="fas fa-angle-down"></i></a>
                                 <div class="sub-menu single-column-menu">
                                     <ul>
-                                        <li><a href="batch50.php">Batch 50</a></li>
-                                        <li><a href="batch51.php">Batch 51</a></li>
-                                        <li><a href="batch52.php">Batch 52</a></li>
-                                        <li><a href="batch53.php">Batch 53</a></li>
-                                        <li><a href="batch54.php">Batch 54</a></li>
-                                        <li><a href="batch55.php">Batch 55</a></li>
-                                        <li><a href="batch56.php">Batch 56</a></li>
-                                        <li><a href="batch57.php">Batch 57</a></li>
-                                        <li><a href="batch58.php">Batch 58</a></li>
-                                        <li><a href="batch59.php">Batch 59</a></li>
-                                        <li><a href="batch60.php">Batch 60</a></li>
+                                        <li><a href="./batch/batch50.php">Batch 50</a></li>
+                                        <li><a href="./batch/batch51.php">Batch 51</a></li>
+                                        <li><a href="./batch/batch52.php">Batch 52</a></li>
+                                        <li><a href="./batch/batch53.php">Batch 53</a></li>
+                                        <li><a href="./batch/batch54.php">Batch 54</a></li>
+                                        <li><a href="./batch/batch55.php">Batch 55</a></li>
+                                        <li><a href="./batch/batch56.php">Batch 56</a></li>
+                                        <li><a href="./batch/batch57.php">Batch 57</a></li>
+                                        <li><a href="./batch/batch58.php">Batch 58</a></li>
+                                        <li><a href="./batch/batch59.php">Batch 59</a></li>
+                                        <li><a href="./batch/batch60.php">Batch 60</a></li>
         
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="advisor.php">Advisor</a></li>
+                            <li><a href="./advisor/advisor.php">Advisor</a></li>
                             <li><a href="#">Contact</a></li>
-                            <li><a href="logout.php" class="btn logout">Logout</a></li>
+                            <li><a href="./login_reg/logout.php" class="btn logout">Logout</a></li>
                         </ul> 
                     </div>
                 </div>

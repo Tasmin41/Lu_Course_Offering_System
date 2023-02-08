@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <!-- font awesom -->
-    <link rel="stylesheet" href="assets/css/font-awesom/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/font-awesom/css/all.min.css">
     <!-- bootsrap -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <!--magnific css-->
-    <link rel="stylesheet" href="assets/css/magnific.css">
+    <link rel="stylesheet" href="../assets/css/magnific.css">
     <!--owl-carosol-->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
     <!--data table css-->
-    <link rel="stylesheet" href="assets/css/data-table.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/data-table.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
     <style>
         .login-area {
 
@@ -27,10 +27,10 @@
 <body>
 
 
-    <section class="login-area" style="background-image:url('./assets/img/jess-bailey-l3N9Q27zULw-unsplash.jpg') ">
+    <section class="login-area" style="background-image:url('../assets/img/jess-bailey-l3N9Q27zULw-unsplash.jpg') ">
         <div class="container">
             <div class="login-wrapper">
-                <div class="login-left" style="background-image: url('./assets/img/nick-fewings-_f-iqDS9k-U-unsplash.jpg');">
+                <div class="login-left" style="background-image: url('../assets/img/nick-fewings-_f-iqDS9k-U-unsplash.jpg');">
                     <div class="content">
                         <h3>Welcome Back</h3>
                         <p>Login to Leading University & get going with your hunt</p>
@@ -60,11 +60,11 @@
         </div>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/magnific.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/magnific.min.js"></script>
     <!--data table js-->
-    <script src="assets/js/dataTables.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="../assets/js/dataTables.min.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>
