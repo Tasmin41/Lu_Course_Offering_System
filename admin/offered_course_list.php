@@ -136,7 +136,7 @@ table.dataTable tbody th, table.dataTable tbody td {
                                 <td>'.$row["no_of_class"].'</td>
                                 <td>'.$row["duration"].'</td>
                                 <td>'.$row["class_week"].'</td>				
-                                <td><a href="offeredcourse_edit.php?id='. $row['id'].'">Edit</a></td>
+                                <td><a href="offeredcourse_edit.php?id='. $row['id'].'"><i class="fa-solid fa-pen-to-square"></i> </a> | <a href="offeredcourse_dlt.php?id='. $row['id'].'"> <i class="fa-solid fa-trash"></i></a></td>
                             </tr>';
                         }
                         ?>

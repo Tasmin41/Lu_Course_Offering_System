@@ -35,11 +35,18 @@ if(isset($_POST["submit"]))
     $batch_section = mysqli_real_escape_string($connect2, $data2[0]);  
     $course_code = mysqli_real_escape_string($connect2, $data2[1]);
     $course_title = mysqli_real_escape_string($connect2, $data2[2]);  
-    $credit = mysqli_real_escape_string($connect2, $data2[3]);  
-    $no_of_class = mysqli_real_escape_string($connect2, $data2[4]);//
-    $duration = mysqli_real_escape_string($connect2, $data2[5]);
-    $week_class = mysqli_real_escape_string($connect2, $data2[6]);
-    $query2 = "INSERT into list_of_offered_course2(batch_section,course_code,course_title,credit,no_of_class,duration,class_week) values('$batch_section','$course_code','$course_title','$credit','$no_of_class','$duration','$week_class')";//
+    $credit = mysqli_real_escape_string($connect2, $data2[3]); 
+
+    $department = mysqli_real_escape_string($connect2, $data2[4]);
+    $no_of_students = mysqli_real_escape_string($connect2, $data2[5]);
+
+
+    $no_of_class = mysqli_real_escape_string($connect2, $data2[6]);//
+    $duration = mysqli_real_escape_string($connect2, $data2[7]);
+    $week_class = mysqli_real_escape_string($connect2, $data2[8]);
+
+    $query2 = "INSERT into list_of_offered_course2(batch_section,course_code,course_title,credit,conducting_department,no_of_students,no_of_class,duration,class_week)
+     values('$batch_section','$course_code','$course_title','$credit','$department','$no_of_students','$no_of_class','$duration','$week_class')";//
     mysqli_query($connect2, $query2);
    }
    fclose($handle);
