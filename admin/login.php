@@ -41,7 +41,7 @@
     <div class="container-fluid">
             <div class="row justify-content-center mt-5">
                <div class="col-lg-4 col-md-6 col-sm-12">
-               <form action="index.php" method="post">
+               <form action="home.php" method="post">
                <div class="mb-3">
                 <h3 class="text-center" style="color: #C3D136;">Admin Login</h3>
             </div>
