@@ -44,12 +44,12 @@
         <div class="container">
             <div class="header d-flex justify-content-between">
                 <div class="logo">
-                    <a href="#"><img src="assets/img/logo.png" alt="logo"></a> 
+                    <a href="home.php"><img src="assets/img/logo.png" alt="logo"></a> 
                     <span><h2>Admin Panel</h2><a href="#">www.lus.ac.bd</a></span>
                 </div>
                 <div class="right">
                     <ul>
-                        <li><a href="#"><i class="fa-sharp fa-solid fa-house"></i></a></li>
+                        <li><a href="home.php"><i class="fa-sharp fa-solid fa-house"></i></a></li>
                         <li><a href="home.php">Home</a></li>
 
                     </ul>

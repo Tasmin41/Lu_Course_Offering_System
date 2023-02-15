@@ -33,7 +33,7 @@
                 </div>
                 <div class="right">
                     <ul>
-                        <li><a href="#"><i class="fa-sharp fa-solid fa-house"></i></a></li>
+                        <li><a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i></a></li>
                         <li><a href="../home.php">Home</a></li>
                     </ul>
                 </div>
