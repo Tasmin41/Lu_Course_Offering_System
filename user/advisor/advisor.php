@@ -239,8 +239,7 @@
     <!--about area ends-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/owl.carousel.min.js"></script>
-    <script src="../assets/js/magnific.min.js"></script>
+
     <!--data table js-->
     <script src="../assets/js/dataTables.min.js"></script>
     <script src="../assets/js/script.js"></script>

@@ -19,9 +19,9 @@
 <body>
     <section class="registration-area" style="background-image:url('../assets/img/jess-bailey-l3N9Q27zULw-unsplash.jpg');">
         <div class="container">
-            <div class="form">
+            <div class="form admin-form">
                 <form action="validation.php" method="post">
-                    <h2>Students Registration</h2>
+                    <h2>Admin Registration</h2>
                     <div class="form-inner">
                         <div class="input-wrap mb-3">
                             <label for="username">Enter Your username : </label>
@@ -39,10 +39,7 @@
                             <label for="cpass">Confirm Password: </label>
                             <input class="form-control" type="password" name="r_cpass">
                         </div>
-                        <div class="input-wrap mb-3">
-                            <label for="mobile">Phone Number : </label>
-                            <input class="form-control" type="tel" name="r_mobile">
-                        </div>
+
                         <button class="btn" type="submit">Register</button>
                         <a class="btn" href="login.php">Login</a>
                     </div>

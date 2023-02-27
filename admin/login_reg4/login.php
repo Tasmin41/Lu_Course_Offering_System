@@ -37,7 +37,8 @@
      </style>
     <title>login</title>
   </head>
-  <body style="background-image:url('./assets/img/jess-bailey-l3N9Q27zULw-unsplash.jpg') ">
+
+  <body style="background-image:url('../assets/img/jess-bailey-l3N9Q27zULw-unsplash.jpg') ">
     <div class="container-fluid">
             <div class="row justify-content-center mt-5">
                <div class="col-lg-4 col-md-6 col-sm-12">
@@ -54,10 +55,13 @@
             <div class="mb-3">
             <input type="password" class="form-control" name="l_pass"  placeholder="password" required>
             </div>
-            <input type="submit" class="btn btn-primary" class="form-control" name="login" value="login"><br><br>
-        
+            <!-- <input type="submit" class="btn btn-primary" class="form-control" name="login" value="login"><br><br> -->
+            <button type="submit" class="btn btn-primary" name ="login">Login</button>
+             
+                <span><p>Do not have account yet?</p> <a href ="registration.php"class="btn btn-primary">Register</a></span>
              </form>
-               </div>
+            </div>
+
             </div>  
      </div>        
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>

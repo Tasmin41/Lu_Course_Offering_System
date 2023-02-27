@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include '../config.php';
     $r_username = $_POST['r_username'];
     $r_email = $_POST['r_email'];
     $r_pass = $_POST['r_pass'];
@@ -13,7 +13,7 @@ include 'config.php';
 
 
     if(strlen($r_username<3 || strlen($r_username) > 20)){
-        echo "<script>alert('3-20 char username is allowed')</script>";
+        echo "<script>alert('Must be between 3 and 20 characters long.')</script>";
         echo "<script>location.href='registration.php'</script>";
     }
     else if(!preg_match($emailPattern  , $r_email)){
@@ -21,7 +21,7 @@ include 'config.php';
         echo "<script>location.href='registration.php'</script>";
     }
     else if($r_pass!==$r_cpass){
-        echo "<script>alert('Pass and confirm pass is not matching')</script>";
+        echo "<script>alert('Password and confirm password doesnt match')</script>";
         echo "<script>location.href='registration.php'</script>";
     }
     else if(!preg_match($mobilePattern , $r_mobile)){
@@ -29,13 +29,13 @@ include 'config.php';
         echo "<script>location.href='registration.php'</script>";
     }
     else{
-        $insert_query = "INSERT INTO `register`(`username`, `email`, `pass`, `mobile`) VALUES ('$r_username','$r_email','$r_pass','$r_mobile')";
+        $insert_query = "INSERT INTO `student_registration`(`username`, `email`, `pass`, `mobile`) VALUES ('$r_username','$r_email','$r_pass','$r_mobile')";
         if(!mysqli_query($conn,$insert_query)){
-            die("not inserted");
+            die("Sorry!! Try Again");
         }
         else{
-            echo "<script>alert('inserted!!')</script>";
-            echo "<script>location.href='index.php'</script>";
+            echo "<script>alert('Thanks for filling out our form!')</script>";
+            echo "<script>location.href='login.php'</script>";
         }
     }
 

@@ -86,13 +86,13 @@
                   <a href="../home.php"><img src="../assets/img/logo.png" alt="logo"></a> 
                   <span>
                      <h2>Admin Panel</h2>
-                     <a href="https://www.lus.ac.bd/">www.lus.ac.bd</a>
+                     <a href="https://www.lus.ac.bd/" target="_blank">www.lus.ac.bd</a>
                   </span>
                </div>
                <div class="right">
                     <ul>
                         <li><a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i></a></li>
-                        <li><a href="../home.php">Home</a></li>
+                        <li><a href="../home.php" target="_blank">Home</a></li>
                     </ul>
                 </div>
                <div class="right">

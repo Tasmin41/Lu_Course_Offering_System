@@ -141,7 +141,7 @@
                 <div class="col-xl-5">
                     <div class="new-teacher-add">
                     <h2>Add New Teacher</h2>
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="" method="POST" enctype="multipart/form-data" class="form-w-600">
                                 <div class="mb-3">
                                     <label>Name</label>
                                     <input type="text" name="name" class="form-control">

@@ -134,11 +134,7 @@ table.dataTable tbody th, table.dataTable tbody td {
                     <input type="submit" name="deleteData" value="deleteData" class="deleteBtn">
                 </form>
 
-                    <?php
-                    function select(){
-                        echo "<script>alert('Incorrect username or password')</script>";
-                    }
-                    ?> 
+
                     <table id="example" class="display nowrap order-column">
             <thead>
                 <tr>
@@ -169,7 +165,7 @@ table.dataTable tbody th, table.dataTable tbody td {
                     if(mysqli_query($conn,$updateQuery)){
                         // echo "<script>alert('Course Updated!!! !!')</script>";
                       
-                        echo "<script>location.href='offered_course_list.php' </script>";
+                        echo "<script>location.href='offered_demo.php' </script>";
                      }else{
                         echo "<script>alert('Course not Updated!!! !!')</script>";
                      }	 

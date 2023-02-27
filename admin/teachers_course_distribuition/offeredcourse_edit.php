@@ -36,7 +36,7 @@
             <div class="header d-flex justify-content-between">
                 <div class="logo">
                     <a href="../home.php"><img src="../assets/img/logo.png" alt="logo"></a> 
-                    <span><h2>Admin Panel</h2><a href="https://www.lus.ac.bd/">www.lus.ac.bd</a></span>
+                    <span><h2>Admin Panel</h2><a href="https://www.lus.ac.bd/" target="_blank">www.lus.ac.bd</a></span>
                 </div>
                 <div class="right">
                     <ul>
@@ -63,78 +63,78 @@
                              <ul class="submenu"> 
                                 <li><a class="submenuitem">Batch 50</a>
                                     <ul class="submenuitem-child">
-                                        <li><a href="../students_course_disribuition/batch50_add.php">Add Course</a> </li>
-                                        <li><a href="../students_course_disribuition/batch50_list.php">Course List</a> </li>
+                                        <li><a href="../students_course_disribuition/batch50_add.php" target="_blank">Add Course</a> </li>
+                                        <li><a href="../students_course_disribuition/batch50_list.php" target="_blank">Course List</a> </li>
                                     </ul>
                                 </li>    
                                 <li><a class="submenuitem">Batch 51</a>
                                     <ul class="submenuitem-child">
-                                        <li><a href="../students_course_disribuition/batch51_add.php">Add Course</a> </li>
-                                        <li><a href="../students_course_disribuition/batch51_list.php">Course List</a> </li>
+                                        <li><a href="../students_course_disribuition/batch51_add.php" target="_blank">Add Course</a> </li>
+                                        <li><a href="../students_course_disribuition/batch51_list.php" target="_blank">Course List</a> </li>
                                     </ul>
                                 </li>   
                                 <li><a class="submenuitem">Batch 52</a>
                                     <ul class="submenuitem-child">
-                                        <li><a href="../students_course_disribuition/batch52_add.php">Add Course</a> </li>
-                                        <li><a href="../students_course_disribuition/batch52_list.php">Course List</a> </li>
+                                        <li><a href="../students_course_disribuition/batch52_add.php" target="_blank">Add Course</a> </li>
+                                        <li><a href="../students_course_disribuition/batch52_list.php" target="_blank">Course List</a> </li>
                                     </ul>
                                 </li>   
                                 <li><a class="submenuitem">Batch 53</a>
                                     <ul class="submenuitem-child">
-                                        <li><a href="../students_course_disribuition/batch53_add.php">Add Course</a> </li>
-                                        <li><a href="../students_course_disribuition/batch53_list.php">Course List</a> </li>
+                                        <li><a href="../students_course_disribuition/batch53_add.php" target="_blank">Add Course</a> </li>
+                                        <li><a href="../students_course_disribuition/batch53_list.php" target="_blank">Course List</a> </li>
                                     </ul>
                                 </li>    
                                 <li><a class="submenuitem">Batch 54</a>
                                     <ul class="submenuitem-child">
-                                        <li><a href="../students_course_disribuition/batch54_add.php">Add Course</a> </li>
-                                        <li><a href="../students_course_disribuition/batch54_list.php">Course List</a> </li>
+                                        <li><a href="../students_course_disribuition/batch54_add.php"target="_blank">Add Course</a> </li>
+                                        <li><a href="../students_course_disribuition/batch54_list.php" target="_blank">Course List</a> </li>
                                     </ul>
                                 </li>   
                                 <li><a class="submenuitem">Batch 55</a>
                                     <ul class="submenuitem-child">
-                                        <li><a href="../students_course_disribuition/batch55_add.php">Add Course</a> </li>
-                                        <li><a href="../students_course_disribuition/batch55_list.php">Course List</a> </li>
+                                        <li><a href="../students_course_disribuition/batch55_add.php" target="_blank">Add Course</a> </li>
+                                        <li><a href="../students_course_disribuition/batch55_list.php" target="_blank">Course List</a> </li>
                                     </ul>
                                 </li>   
                                 <li><a class="submenuitem">Batch 56</a>
                                     <ul class="submenuitem-child">
-                                        <li><a href="../students_course_disribuition/batch56_add.php">Add Course</a> </li>
-                                        <li><a href="../students_course_disribuition/batch56_list.php">Course List</a> </li>
+                                        <li><a href="../students_course_disribuition/batch56_add.php" target="_blank">Add Course</a> </li>
+                                        <li><a href="../students_course_disribuition/batch56_list.php" target="_blank">Course List</a> </li>
                                     </ul>
                                 </li>  
                                 <li><a class="submenuitem">Batch 57</a>
                                     <ul class="submenuitem-child">
-                                        <li><a href="../students_course_disribuition/batch57_add.php">Add Course</a> </li>
-                                        <li><a href="../students_course_disribuition/batch57_list.php">Course List</a> </li>
+                                        <li><a href="../students_course_disribuition/batch57_add.php" target="_blank">Add Course</a> </li>
+                                        <li><a href="../students_course_disribuition/batch57_list.php" target="_blank">Course List</a> </li>
                                     </ul>
                                 </li> 
                                 <li><a class="submenuitem">Batch 58</a>
                                     <ul class="submenuitem-child">
-                                        <li><a href="../students_course_disribuition/batch58_add.php">Add Course</a> </li>
-                                        <li><a href="../students_course_disribuition/batch58_list.php">Course List</a> </li>
+                                        <li><a href="../students_course_disribuition/batch58_add.php" target="_blank">Add Course</a> </li>
+                                        <li><a href="../students_course_disribuition/batch58_list.php" target="_blank">Course List</a> </li>
                                     </ul>
                                 </li>
                                 <li><a class="submenuitem">Batch 59</a>
                                     <ul class="submenuitem-child">
-                                        <li><a href="../students_course_disribuition/batch59_add.php">Add Course</a> </li>
-                                        <li><a href="../students_course_disribuition/batch59_list.php">Course List</a> </li>
+                                        <li><a href="../students_course_disribuition/batch59_add.php" target="_blank">Add Course</a> </li>
+                                        <li><a href="../students_course_disribuition/batch59_list.php" target="_blank">Course List</a> </li>
                                     </ul>
                                 </li>
                                 <li><a class="submenuitem">Batch 60</a>
                                     <ul class="submenuitem-child">
-                                        <li><a href="../students_course_disribuition/batch60_add.php">Add Course</a> </li>
-                                        <li><a href="../students_course_disribuition/batch60_list.php">Course List</a> </li>
+                                        <li><a href="../students_course_disribuition/batch60_add.php" target="_blank">Add Course</a> </li>
+                                        <li><a href="../students_course_disribuition/batch60_list.php" target="_blank">Course List</a> </li>
                                     </ul>
                                 </li> 
                              </ul>
                          </li> 
                          <li><a class="menuitem" href="#">Teacher Course Disribuition</a>
                             <ul class="submenu">
-                                <li><a class="submenuitem" href="./addOffered_csv.php">Add offered List(CSV)</a></li>
-                                <li><a class="submenuitem" href="./addOffered_single.php">Add offered List(single)</a></li>
-                                <li><a class="submenuitem" href="./offered_course_list.php">Offered Course List</a></li>
-                                <li><a class="submenuitem" href="./createTable.php">Teacher Course Disribuition Table</a></li>
+                                <li><a class="submenuitem" href="./addOffered_csv.php" target="_blank">Add offered List(CSV)</a></li>
+                                <li><a class="submenuitem" href="./addOffered_single.php" target="_blank">Add offered List(single)</a></li>
+                                <li><a class="submenuitem" href="./offered_course_list.php" target="_blank">Offered Course List</a></li>
+                                <li><a class="submenuitem" href="./createTable.php" target="_blank">Teacher Course Disribuition Table</a></li>
                             </ul>
                         </li> 
                         <li><a class="menuitem" href="#">Previous Question</a></li> 

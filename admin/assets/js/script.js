@@ -28,10 +28,16 @@
 				once :true,	
 			});
 		},
+		// preventEvent:()=>{
+		// 	$('.btn-default').click(function(e){
+		// 		e.preventDefault();
+		// 	});
+		// },
 		init: function () {
 
 			allfunction.elemntCatSLider();
 			allfunction.dataTable();
+			// allfunction.preventEvent();
 		},
 	}
 	$(document).ready(function () {

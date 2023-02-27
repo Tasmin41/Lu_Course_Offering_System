@@ -5,11 +5,11 @@
             $l_email=$_POST['l_email'];
             $l_pass=$_POST['l_pass'];
 
-            $result = mysqli_query($conn ,"SELECT * FROM `student_registration` WHERE email='$l_email' And pass='$l_pass'");
+            $result = mysqli_query($conn ,"SELECT * FROM `teacher_registration` WHERE r_email='$l_email' And r_pass='$l_pass'");
 
             if(mysqli_num_rows($result)>0){
                 session_start();
-                $_SESSION['email']=$l_email;
+                $_SESSION['r_email']=$l_email;
                 echo "<script>location.href='../home.php'</script>";
 
             }
