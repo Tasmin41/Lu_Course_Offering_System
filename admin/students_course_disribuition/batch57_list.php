@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,59 +19,7 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <!--main css-->
     <link rel="stylesheet" href="../assets/css/main.css">
-    <style>
-        p#val {
-    color: #1B548D;
-    padding: 15px;
-    display: flex;
-    justify-content: flex-end;
-    font-weight: bold;
-    max-width: 218px;
-    border: 1px solid;
-    margin: 10px 20px 20px auto;
-}
-a{
-    text-decoration: none;
-}
-a:hover{
-    text-decoration: none;
-}
-table {
-    caption-side: bottom;
-    border-collapse: collapse;
-    /* max-width: 95%; */
-    margin: 0 auto;
-}
 
-table.dataTable thead>tr>th.sorting:before, table.dataTable thead>tr>th.sorting_asc:before, table.dataTable thead>tr>th.sorting_desc:before, table.dataTable thead>tr>th.sorting_asc_disabled:before, table.dataTable thead>tr>th.sorting_desc_disabled:before, table.dataTable thead>tr>td.sorting:before, table.dataTable thead>tr>td.sorting_asc:before, table.dataTable thead>tr>td.sorting_desc:before, table.dataTable thead>tr>td.sorting_asc_disabled:before, table.dataTable thead>tr>td.sorting_desc_disabled:before {
-    bottom: 50%;
-    content: "";
-}
-table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_asc:after, table.dataTable thead>tr>th.sorting_desc:after, table.dataTable thead>tr>th.sorting_asc_disabled:after, table.dataTable thead>tr>th.sorting_desc_disabled:after, table.dataTable thead>tr>td.sorting:after, table.dataTable thead>tr>td.sorting_asc:after, table.dataTable thead>tr>td.sorting_desc:after, table.dataTable thead>tr>td.sorting_asc_disabled:after, table.dataTable thead>tr>td.sorting_desc_disabled:after {
-    top: 50%;
-    content: "";
-}
-label {
-	display: inline-block;
-	margin-left: 10px;
-	margin-bottom: 10px;
-}
-.dataTables_wrapper .dataTables_paginate {
-	margin-bottom: 21px;
-}
-table.dataTable.nowrap th {
-	white-space: nowrap;
-}
-.body h2{
-    justify-content: center;
-}
-.dataTables_wrapper .dataTables_filter {
-	float: right;
-	text-align: left;
-	padding-right: 20px;
-	margin-bottom: 10px;
-}
-    </style>
 </head>
 <body>
 
@@ -88,8 +39,8 @@ table.dataTable.nowrap th {
                 <div class="right">
                     <ul>
                         <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="#">Hello Admin | </a></li>
-                        <li><a href="../logout.php" style="color: #C3D136;;">Logout</a></li>
+                        <li><a href="#"><?php echo $_SESSION['r_email'] ?>  | </a></li>
+                        <li><a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -195,7 +146,18 @@ table.dataTable.nowrap th {
                      </ul>
                 </div>
                 <div class="body col-xl-9 p0">
-                    <h2>Batch 57 course List</h2>     
+                    <h2>Batch 57 course List</h2> 
+                    <?php
+                  include '../config.php';
+
+                    if(isset($_POST['deleteData'])){
+                        $deleteQuery = "TRUNCATE TABLE batch_57";
+                        mysqli_query($conn,$deleteQuery);
+                    }
+                ?>
+               <form  method="post" class="deleteForm">
+                    <input type="submit" name="deleteData" value="deleteData" class="deleteBtn">
+                </form>    
                     <table id="example" class="display nowrap order-column">
                     <p id="val"></p>
             <thead>

@@ -1,5 +1,6 @@
 <?php
    include '../config.php';
+   session_start();
    $id = $_GET['id'];
    //echo $id;
    $dataFetchQuery = "SELECT * FROM `batch_51` WHERE id = '$id'";
@@ -47,8 +48,8 @@
                 <div class="right">
                     <ul>
                         <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="#">Hello Admin | </a></li>
-                        <li><a href="../logout.php" style="color: #C3D136;;">Logout</a></li>
+                        <li><a href="#"><?php echo $_SESSION['r_email'] ?> | </a></li>
+                        <li><a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -166,7 +167,7 @@
                     $credit=$_POST['credit'];
                     $offered=$_POST['offer'];
                     $semester=$_POST['semester'];
-                    // $updateQuery = "UPDATE `teacher` SET `image`='$image_des',`name`='$name',`designation`='$designation',`email`='$email',`phone`='$phone' WHERE id='$id'";
+                    
                     $updateQuery ="UPDATE batch_51 SET `course_code`= '$courseCode',`course_title`= '$courseTitle',`credit`= '$credit',`offer`= '$offered',`semester`='$semester' WHERE id = '$id'";
                     if(mysqli_query($conn,$updateQuery)){
                         echo "<script>alert('Course Updated!!! !!')</script>";
@@ -178,7 +179,7 @@
 			?>
 			<!--update course php end -->
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="" method="post" enctype="multipart/form-data" class="batch_update_form">
                 <div class="mb-3 input">
                     <label>course Code:</label><input type="text" value="<?php echo $data['course_code'] ;?>" name="course_code" />
                 </div>

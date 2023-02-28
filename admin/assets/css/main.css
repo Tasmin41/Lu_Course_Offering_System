@@ -5,7 +5,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	line-height: 1.4;
-	background-color: #2E5E79;
+	/* background-color: #2E5E79; */
 }
 
 .container {
@@ -100,6 +100,15 @@ input {
 	outline: none !important;
 	height: 100%;
 	width: 100%;
+}
+.deleteBtn{
+    padding: 10px 20px;
+ 
+}
+.deleteForm {
+    max-width: 200px;
+    margin: 20px 0 0 auto;
+    padding: 0 14px 0 0;
 }
 /*default css end here*/
 /*Login Registration CSS Starts From here*/
@@ -302,10 +311,9 @@ input {
 /*header css ends here*/
 /*body css starts from here*/
 .body-wrapper {
-	margin-top: 20px;
-	display: flex;
+	padding-top: 20px;
 	justify-content: space-between;
-	gap: 20px;
+	
 }
 
 .body {
@@ -458,7 +466,107 @@ table.dataTable thead td {
 	background-color: #c3d136;
 	color: #fff;
 }
+p#val {
+	color: #1B548D;
+	padding: 15px;
+	display: flex;
+	justify-content: flex-end;
+	font-weight: bold;
+	max-width: 218px;
+	border: 1px solid;
+	margin: 10px 20px 20px auto;
+	}
 
+
+/*Batch List Css starts from here*/
+.body-area{
+	background-color: #1B548D;
+}
+.student_list_table.dataTable th {
+	white-space: nowrap !important;
+	}
+ .student_list_table.dataTable td {
+		white-space: wrap !important;
+	}
+	.student_list_table{
+		caption-side: bottom;
+		border-collapse: collapse;
+		margin: 0 auto;
+		}
+		.student_list_table.dataTable thead>tr>th.sorting:before, table.dataTable thead>tr>th.sorting_asc:before, .student_list_table.dataTable thead>tr>th.sorting_desc:before, table.dataTable thead>tr>th.sorting_asc_disabled:before, table.dataTable thead>tr>th.sorting_desc_disabled:before, table.dataTable thead>tr>td.sorting:before, table.dataTable thead>tr>td.sorting_asc:before, table.dataTable thead>tr>td.sorting_desc:before, table.dataTable thead>tr>td.sorting_asc_disabled:before, table.dataTable thead>tr>td.sorting_desc_disabled:before {
+		bottom: 50%;
+		content: "";
+		}
+		.student_list_table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_asc:after, .student_list_table.dataTable thead>tr>th.sorting_desc:after, table.dataTable thead>tr>th.sorting_asc_disabled:after, table.dataTable thead>tr>th.sorting_desc_disabled:after, table.dataTable thead>tr>td.sorting:after, table.dataTable thead>tr>td.sorting_asc:after, table.dataTable thead>tr>td.sorting_desc:after, table.dataTable thead>tr>td.sorting_asc_disabled:after, table.dataTable thead>tr>td.sorting_desc_disabled:after {
+		top: 50%;
+		content: "";
+		}
+		label {
+			display: inline-block;
+			margin-left: 10px;
+			margin-bottom: 10px;
+			}
+			.dataTables_wrapper .dataTables_paginate {
+			margin-bottom: 21px;
+			}
+   
+			/* .body h2{
+			justify-content: center;
+			} */
+			.dataTables_wrapper .dataTables_filter {
+			float: right;
+			text-align: left;
+			padding-right: 20px;
+			margin-bottom: 10px;
+			}
+		/*Batch List Css end here*/
+		/*Batch List Update css starts from here*/
+		.batch_update_form{
+			max-width: 600px;
+			margin: 20px;
+		}
+
+
+
+/*Batch Add css starts from here*/
+.add-body-area{
+	padding: 130px 0;
+	background-color: #2E5E79; 
+
+}
+.add-div{
+	background-color: #ffffff;
+	max-width: 700px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	margin: 0 auto;
+}
+.add-div-h3{
+	text-align: center;
+	padding: 30px  0 ;
+	color: #1B548D;
+    background: #E6F0F3;
+    padding: 10px 12px;
+    border-bottom: 1px solid #B3CBD6;
+}
+.add-div-form{
+	padding: 20px 20px 40px;
+}
+.add-div-form label{
+	color: #1B548D;
+	text-transform: capitalize;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.theme-btn{
+	background-color: #C3D136;
+	color: #1B548D;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 10px 20px;
+	border-radius: 8px;
+	max-width: 130px;
+}
+/*Batch add css end here*/
 /*body csss ends here*/
 
 /*Footer css starts From here*/

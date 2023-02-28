@@ -1,11 +1,5 @@
 ﻿<?php
 session_start();
-print '
-<script type="text/javascript">
-     var carnr;        
-     carnr = "<?php print($result); ?>"
-     console.log(carnr);
-</script>';
 ?>
 <!DOCTYPE html>
 <html lang="en">

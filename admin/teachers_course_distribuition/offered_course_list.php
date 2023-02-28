@@ -70,21 +70,8 @@ table.dataTable tbody th, table.dataTable tbody td {
     font-size: 14px;
     text-align: center;
 }
-.deleteBtn{
-    padding: 10px 20px;
- 
-}
-.deleteForm {
-    max-width: 200px;
-    margin: 20px 0 0 auto;
-    padding: 0 14px 0 0;
-}
-.selectsubmit{
-    width: 60px;
-}
-.selectsubmitForm{
-    padding: 0;
-}
+
+
     </style>
 </head>
 <body>
@@ -134,11 +121,7 @@ table.dataTable tbody th, table.dataTable tbody td {
                     <input type="submit" name="deleteData" value="deleteData" class="deleteBtn">
                 </form>
 
-                    <?php
-                    function select(){
-                        echo "<script>alert('Incorrect username or password')</script>";
-                    }
-                    ?> 
+
                     <table id="example" class="display nowrap order-column">
             <thead>
                 <tr>
