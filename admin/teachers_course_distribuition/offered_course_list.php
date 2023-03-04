@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,28 +21,12 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <style>
 
-a{
-    text-decoration: none;
-}
-a:hover{
-    text-decoration: none;
-}
-table {
-    caption-side: bottom;
-    border-collapse: collapse;
-    margin: 0 auto;
-}
+
+
 table.dataTable.nowrap th, table.dataTable.nowrap td {
     white-space: normal;
 }
-table.dataTable thead>tr>th.sorting:before, table.dataTable thead>tr>th.sorting_asc:before, table.dataTable thead>tr>th.sorting_desc:before, table.dataTable thead>tr>th.sorting_asc_disabled:before, table.dataTable thead>tr>th.sorting_desc_disabled:before, table.dataTable thead>tr>td.sorting:before, table.dataTable thead>tr>td.sorting_asc:before, table.dataTable thead>tr>td.sorting_desc:before, table.dataTable thead>tr>td.sorting_asc_disabled:before, table.dataTable thead>tr>td.sorting_desc_disabled:before {
-    bottom: 50%;
-    content: "";
-}
-table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_asc:after, table.dataTable thead>tr>th.sorting_desc:after, table.dataTable thead>tr>th.sorting_asc_disabled:after, table.dataTable thead>tr>th.sorting_desc_disabled:after, table.dataTable thead>tr>td.sorting:after, table.dataTable thead>tr>td.sorting_asc:after, table.dataTable thead>tr>td.sorting_desc:after, table.dataTable thead>tr>td.sorting_asc_disabled:after, table.dataTable thead>tr>td.sorting_desc_disabled:after {
-    top: 50%;
-    content: "";
-}
+
 label {
 	display: inline-block;
 	margin-left: 10px;
@@ -53,9 +40,7 @@ table.dataTable.nowrap th {
     font-size: 14px;
     text-align: center;
 }
-.body h2{
-    justify-content: center;
-}
+
 .dataTables_wrapper .dataTables_filter {
 	float: right;
 	text-align: left;
@@ -92,8 +77,8 @@ table.dataTable tbody th, table.dataTable tbody td {
                 <div class="right">
                     <ul>
                         <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="#">Hello Admin | </a></li>
-                        <li><a href="../logout.php" style="color: #C3D136;;">Logout</a></li>
+                        <li><a href="#"><?php echo $_SESSION['r_email'] ?> | </a></li>
+                        <li><a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -109,10 +94,10 @@ table.dataTable tbody th, table.dataTable tbody td {
                 <?php
 
                 if(isset($_POST['deleteData'])){
-                    echo "<script>alert('Are you sure ? It will delete all data !!! !!')</script>";
-                    $connect = mysqli_connect("localhost", "root", "", "finalyear_project");
+       
+                    include '../config.php';
                     $deleteQuery = "TRUNCATE TABLE list_of_offered_course2";
-                    mysqli_query($connect,$deleteQuery);
+                    mysqli_query($conn,$deleteQuery);
                 }
             ?>
 

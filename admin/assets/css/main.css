@@ -503,7 +503,7 @@ p#val {
 		}
 		label {
 			display: inline-block;
-			margin-left: 10px;
+			/* margin-left: 10px; */
 			margin-bottom: 10px;
 			}
 			.dataTables_wrapper .dataTables_paginate {
@@ -523,10 +523,36 @@ p#val {
 		/*Batch List Update css starts from here*/
 		.batch_update_form{
 			max-width: 600px;
-			margin: 20px;
+			margin: 20px auto;
 		}
-
-
+		/*Teacher create table css starts from here*/
+		.teacher_p{
+			margin-bottom: 20px;
+			}
+			.teacher-table{
+			padding: 10px 20px;
+			}
+			.button{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 50px !important;
+			}
+			.total-cal{
+			text-align: end;
+			}
+			.new-teacher-add {
+				background: #fff;
+				border-radius: 8px;
+				height: 100%;
+				padding: 20px;
+			}
+		/*Teacher create table css end here*/
+		/*Offered course list css*/
+		.selectsubmitForm{
+			display: flex;
+			gap: 10px;
+		}
 
 /*Batch Add css starts from here*/
 .add-body-area{

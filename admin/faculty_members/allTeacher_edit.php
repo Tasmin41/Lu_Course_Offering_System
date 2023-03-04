@@ -1,5 +1,6 @@
 <?php
    include '../config.php';
+   session_start();
    $id = $_GET['id'];
    //echo $id;
    $dataFetchQuery = "SELECT * FROM `allTeacher` WHERE id = '$id'";
@@ -12,7 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Batch 50 edit course</title>
+    <title>Faculty Member info edit </title>
     <!-- font awesom -->
     <link rel="stylesheet" href="../assets/css/font-awesom/css/all.min.css">
     <!-- bootsrap -->
@@ -23,11 +24,7 @@
     <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
 
     <link rel="stylesheet" href="../assets/css/main.css">
-    <style>
-        .body h2{
-            justify-content: center;
-        }
-    </style>
+
     
 </head>
 <body>
@@ -47,8 +44,8 @@
                 <div class="right">
                     <ul>
                         <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="#">Hello Admin | </a></li>
-                        <li><a href="../logout.php" style="color: #C3D136;;">Logout</a></li>
+                        <li><a href="#"><?php echo $_SESSION['r_email'] ?> | </a></li>
+                        <li><a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -177,7 +174,7 @@
 			?>
 			<!--update course php end -->
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="" method="post" enctype="multipart/form-data" class="batch_update_form">
                 <div class="mb-3 input">
                     <label>Name</label><input type="text" value="<?php echo $data['name'] ;?>" name="name" />
                 </div>
@@ -192,7 +189,6 @@
                 <div class="mb-3 submit-btn">
                 <input type="submit" name="submit" Value="Save" />
                 </div>
-        
             </form>
                </div>
             </div>

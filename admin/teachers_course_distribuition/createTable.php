@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -7,76 +10,14 @@
       <title>Teacher List</title>
       <!--bootstrap css-->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-      <!--data table css-->
-      <!-- <link rel="stylesheet" href="../assets/css/datatable.min.css"/> -->
+
       <!-- font awesom -->
       <link rel="stylesheet" href="../assets/css/font-awesom/css/all.min.css">
       <!-- bootsrap -->
       <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
       <!--main css-->
       <link rel="stylesheet" href="../assets/css/main.css">
-      <style>
 
-         a{
-         text-decoration: none;
-         }
-         a:hover{
-         text-decoration: none;
-         }
-         table {
-         caption-side: bottom;
-         /* border-collapse: collapse; */
-         /* max-width: 95%; */
-         margin: 0 auto 50px !important;
-         }
-         table.dataTable.nowrap th, table.dataTable.nowrap td {
-         white-space: normal;
-         }
-         table.dataTable thead>tr>th.sorting:before, table.dataTable thead>tr>th.sorting_asc:before, table.dataTable thead>tr>th.sorting_desc:before, table.dataTable thead>tr>th.sorting_asc_disabled:before, table.dataTable thead>tr>th.sorting_desc_disabled:before, table.dataTable thead>tr>td.sorting:before, table.dataTable thead>tr>td.sorting_asc:before, table.dataTable thead>tr>td.sorting_desc:before, table.dataTable thead>tr>td.sorting_asc_disabled:before, table.dataTable thead>tr>td.sorting_desc_disabled:before {
-         bottom: 50%;
-         content: "";
-         }
-         table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_asc:after, table.dataTable thead>tr>th.sorting_desc:after, table.dataTable thead>tr>th.sorting_asc_disabled:after, table.dataTable thead>tr>th.sorting_desc_disabled:after, table.dataTable thead>tr>td.sorting:after, table.dataTable thead>tr>td.sorting_asc:after, table.dataTable thead>tr>td.sorting_desc:after, table.dataTable thead>tr>td.sorting_asc_disabled:after, table.dataTable thead>tr>td.sorting_desc_disabled:after {
-         top: 50%;
-         content: "";
-         }
-         label {
-         display: inline-block;
-         margin-left: 10px;
-         margin-bottom: 10px;
-         }
-         .dataTables_wrapper .dataTables_paginate {
-         margin-bottom: 21px;
-         }
-         table.dataTable.nowrap th {
-         white-space: nowrap;
-         }
-         .body h2{
-         justify-content: center;
-         }
-         .dataTables_wrapper .dataTables_filter {
-         float: right;
-         text-align: left;
-         padding-right: 20px;
-         margin-bottom: 10px;
-         }
-         .teacher_p{
-         margin-bottom: 20px;
-         }
-         .teacher-table{
-         /* margin-bottom: 50px; */
-         padding: 10px 20px;
-         }
-         .button{
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         margin-bottom: 50px !important;
-         }
-         .total-cal{
-         text-align: end;
-         }
-      </style>
    </head>
    <body>
       <section class="header-area">
@@ -98,8 +39,8 @@
                <div class="right">
                   <ul>
                      <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                     <li><a href="#">Hello Admin | </a></li>
-                     <li><a href="../logout.php" style="color: #C3D136;;">Logout</a></li>
+                     <li><a href="#"><?php echo $_SESSION['r_email'] ?> | </a></li>
+                     <li><a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a></li>
                   </ul>
                </div>
             </div>
@@ -224,8 +165,7 @@
       </footer>
       <!--jQuery -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
-      <!--data table js-->
-      <!-- <script src="../assets/js/datatable.min.js"></script> -->
+
       <!--pdf downlood-->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"

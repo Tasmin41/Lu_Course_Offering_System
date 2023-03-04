@@ -1,4 +1,5 @@
 <?php
+    session_start();
    include '../config.php';
    $id = $_GET['id'];
    //echo $id;
@@ -23,11 +24,7 @@
     <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
 
     <link rel="stylesheet" href="../assets/css/main.css">
-    <style>
-        .body h2{
-            justify-content: center;
-        }
-    </style>
+
     
 </head>
 <body>
@@ -47,8 +44,8 @@
                 <div class="right">
                     <ul>
                         <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="#">Hello Admin | </a></li>
-                        <li><a href="../logout.php" style="color: #C3D136;;">Logout</a></li>
+                        <li><a href="#"><?php echo $_SESSION['r_email'] ?> | </a></li>
+                        <li><a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -175,7 +172,7 @@
 
                     $updateQuery ="UPDATE list_of_offered_course2 SET `batch_section`= '$batchSec', `course_code`= '$courseCode',`course_title`= '$courseTitle',`credit`= '$credit',`prerequisite`= '$prerequisite',`conducting_department`= '$department',`no_of_students`= '$students',`teacher`='$teacher',`no_of_class`= '$noOfclass',`duration`= '$duration',`class_week`='$classWeek' WHERE id = '$id'";
                     if(mysqli_query($conn,$updateQuery)){
-                        // echo "<script>alert('Course Updated!!! !!')</script>";
+
                         echo "<script>location.href='offered_course_list.php'</script>";
                      }else{
                         echo "<script>alert('Course not Updated!!! !!')</script>";
@@ -184,7 +181,7 @@
 			?>
 			<!--update course php end -->
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="" method="post" enctype="multipart/form-data" class="batch_update_form">
                 <div class="mb-3 input">
                     <label>Batch+Section:</label><input type="text" value="<?php echo $data['batch_section'] ;?>" name="batch_section" />
                 </div>

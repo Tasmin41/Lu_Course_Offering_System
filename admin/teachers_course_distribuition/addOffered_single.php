@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,11 +18,7 @@
     <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
 
     <link rel="stylesheet" href="../assets/css/main.css">
-    <style>
-        .body h2{
-            justify-content: center;
-        }
-    </style>
+
     
 </head>
 <body>
@@ -40,8 +38,8 @@
                 <div class="right">
                     <ul>
                         <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="#">Hello Admin | </a></li>
-                        <li><a href="../logout.php" style="color: #C3D136;;">Logout</a></li>
+                        <li><a href="#"><?php echo $_SESSION['r_email'] ?> | </a></li>
+                        <li><a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -178,7 +176,7 @@
 			?>
 			<!--Add course php end -->
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="" method="post" enctype="multipart/form-data" class="batch_update_form">
                 <div class="mb-3 input">
                     <label>Batch+Section:</label><input type="text" name="batch_section" />
                 </div>

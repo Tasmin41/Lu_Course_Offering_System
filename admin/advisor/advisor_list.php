@@ -1,3 +1,8 @@
+
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,22 +27,7 @@
 <script src="../assets/js/datatable.min.js"></script>
     <link rel="stylesheet" href="../assets/css/main.css">
     <style>
-        p#val {
-    color: #1B548D;
-    padding: 15px;
-    display: flex;
-    justify-content: flex-end;
-    font-weight: bold;
-    max-width: 218px;
-    border: 1px solid;
-    margin: 10px 20px 20px auto;
-}
-a{
-    text-decoration: none;
-}
-a:hover{
-    text-decoration: none;
-}
+
 table {
     caption-side: bottom;
     border-collapse: collapse;
@@ -98,7 +88,7 @@ label {
                 <div class="right">
                     <ul>
                         <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="#">Hello Admin | </a></li>
+                        <li><a href="#"><?php echo $_SESSION['r_email'] ?> | </a></li>
                         <li><a href="../logout.php" style="color: #C3D136;;">Logout</a></li>
                     </ul>
                 </div>
