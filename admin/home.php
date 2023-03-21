@@ -21,34 +21,39 @@ session_start();
     
 </head>
 <body>
-    <section class="header-area">
-        <div class="container">
-            <div class="header d-flex justify-content-between">
-                <div class="logo">
-                    <a href="home.php"><img src="assets/img/logo.png" alt="logo"></a> 
+<section class="header-area">
+    <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+               <div class="logo">
+                    <a href="home.php" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"></a> 
                     <span><h2>Admin Panel</h2><a href="https://www.lus.ac.bd/" target="_blank">www.lus.ac.bd</a></span>
                 </div>
-                <div class="right">
-                    <ul>
-                        <li><a href="home.php"><i class="fa-sharp fa-solid fa-house"></i></a></li>
-                        <li><a href="home.php">Home</a></li>
-
-                    </ul>
-                </div>
-                <div class="right">
-                    <ul>
-                        <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="#"><?php echo $_SESSION['r_email'] ?></a></li>
-                        <li><a href="./login_reg/logout.php" style="color: #C3D136;;">Logout</a></li>
-                    </ul>
-                </div>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon _header_navbar_toggle_icon"></span>
+               </button>
+               <div class="collapse navbar-collapse right" id="navbarSupportedContent">
+                  <ul class="navbar-nav mx-auto system-nav">
+                     <li class="nav-item">
+                        <a href="home.php"><i class="fa-sharp fa-solid fa-house"></i> Home</a>
+                     </li>
+                  </ul>
+                  <ul class="navbar-nav">
+                     <li class="nav-item">
+                        <a href="home.php"><i class="fa-solid fa-user"></i> <?php echo $_SESSION['r_email'] ?> </a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="./login_reg/logout.php" style="color: #C3D136;;">Logout</a>
+                     </li>
+                  </ul>
+               </div>
             </div>
-        </div>
+         </nav>
     </section>
     <section class="body-area">
         <div class="container">
             <div class="body-wrapper row">
-                <div class="side-bar col-xl-3">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                    <div class="side-bar">
                     <ul class="section menu">
                         <li><a class="menuitem" href="#0">Students Course Disribuition</a>
                              <ul class="submenu"> 
@@ -143,9 +148,12 @@ session_start();
                             </ul>
                         </li>
                      </ul>
+                    </div>
                 </div>
-                <div class="body col-xl-9 p0">
-                    <h2>Hello Admin</h2>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
+                    <div class="body">
+                        <h2>Hello Admin</h2>
+                    </div>
                </div>
             </div>
         </div>

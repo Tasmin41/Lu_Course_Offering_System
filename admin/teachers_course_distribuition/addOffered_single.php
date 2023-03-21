@@ -22,33 +22,39 @@ session_start();
     
 </head>
 <body>
-    <section class="header-area">
-        <div class="container">
-            <div class="header d-flex justify-content-between">
-                <div class="logo">
-                    <a href="../home.php"><img src="../assets/img/logo.png" alt="logo"></a> 
+<section class="header-area">
+    <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+               <div class="logo">
+                    <a href="home.php" class="navbar-brand"><img src="../assets/img/logo.png" alt="logo"></a> 
                     <span><h2>Admin Panel</h2><a href="https://www.lus.ac.bd/" target="_blank">www.lus.ac.bd</a></span>
                 </div>
-                <div class="right">
-                    <ul>
-                        <li><a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i></a></li>
-                        <li><a href="../home.php">Home</a></li>
-                    </ul>
-                </div>
-                <div class="right">
-                    <ul>
-                        <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="#"><?php echo $_SESSION['r_email'] ?> | </a></li>
-                        <li><a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a></li>
-                    </ul>
-                </div>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon _header_navbar_toggle_icon"></span>
+               </button>
+               <div class="collapse navbar-collapse right" id="navbarSupportedContent">
+                  <ul class="navbar-nav mx-auto system-nav">
+                     <li class="nav-item">
+                        <a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i> Home</a>
+                     </li>
+                  </ul>
+                  <ul class="navbar-nav">
+                     <li class="nav-item">
+                        <a href="../home.php"><i class="fa-solid fa-user"></i> <?php echo $_SESSION['r_email'] ?></a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a>
+                     </li>
+                  </ul>
+               </div>
             </div>
-        </div>
+         </nav>
     </section>
     <section class="body-area">
         <div class="container">
             <div class="body-wrapper row">
-            <div class="side-bar col-xl-3">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                    <div class="side-bar">
                     <ul class="section menu">
                         <li><a class="menuitem">Courses</a>
                              <ul class="submenu"> 
@@ -143,77 +149,80 @@ session_start();
                             </ul>
                         </li>
                      </ul>
+                    </div>
                 </div>
-                <div class="body col-xl-9 p0">
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
+                    <div class="body">
                     <h2>Add single Course</h2>
 
-            <!--Add course php start -->
-			<?php
-              include '../config.php';
-			    if(isset($_POST['submit'])){
-                    $id = $_POST['id'];
-                    $batchSec=$_POST['batch_section'];
-				    $courseCode=$_POST['course_code'];
-                    $courseTitle=$_POST['course_title'];
-                    $credit=$_POST['credit'];
-                    $prerequisite=$_POST['prerequisite'];
-                    $department=$_POST['conducting_department'];
-                    $students = $_POST['no_of_students'];
-				    $teacher=$_POST['teacher'];
-                    $noOfclass=$_POST['no_of_class'];
-                    $duration=$_POST['duration'];
-                    $classWeek=$_POST['class_week'];
+<!--Add course php start -->
+<?php
+  include '../config.php';
+    if(isset($_POST['submit'])){
+        $id = $_POST['id'];
+        $batchSec=$_POST['batch_section'];
+        $courseCode=$_POST['course_code'];
+        $courseTitle=$_POST['course_title'];
+        $credit=$_POST['credit'];
+        $prerequisite=$_POST['prerequisite'];
+        $department=$_POST['conducting_department'];
+        $students = $_POST['no_of_students'];
+        $teacher=$_POST['teacher'];
+        $noOfclass=$_POST['no_of_class'];
+        $duration=$_POST['duration'];
+        $classWeek=$_POST['class_week'];
 
-                    $InsertQuery ="INSERT INTO `list_of_offered_course2`(`batch_section`,`course_code`,`course_title`,`credit`,`prerequisite`,`conducting_department`,`no_of_students`,`teacher`,`no_of_class`,`duration`,`class_week`)
-                     VALUES ('$batchSec','$courseCode','$courseTitle','$credit','$prerequisite','$department','$students','$teacher','$noOfclass','$duration','$classWeek')";
-                    if(mysqli_query($conn,$InsertQuery)){
-                        // echo "<script>alert('Course Updated!!! !!')</script>";
-                        echo "<script>location.href='offered_course_list.php'</script>";
-                     }else{
-                        echo "<script>alert('Course not Added!!! !!')</script>";
-                     }	 
-				}
-			?>
-			<!--Add course php end -->
+        $InsertQuery ="INSERT INTO `list_of_offered_course2`(`batch_section`,`course_code`,`course_title`,`credit`,`prerequisite`,`conducting_department`,`no_of_students`,`teacher`,`no_of_class`,`duration`,`class_week`)
+         VALUES ('$batchSec','$courseCode','$courseTitle','$credit','$prerequisite','$department','$students','$teacher','$noOfclass','$duration','$classWeek')";
+        if(mysqli_query($conn,$InsertQuery)){
+            // echo "<script>alert('Course Updated!!! !!')</script>";
+            echo "<script>location.href='offered_course_list.php'</script>";
+         }else{
+            echo "<script>alert('Course not Added!!! !!')</script>";
+         }	 
+    }
+?>
+<!--Add course php end -->
 
-            <form action="" method="post" enctype="multipart/form-data" class="batch_update_form">
-                <div class="mb-3 input">
-                    <label>Batch+Section:</label><input type="text" name="batch_section" />
-                </div>
-                <div class="mb-3 input">
-                    <label>course Code:</label><input type="text" name="course_code" />
-                </div>
-                <div class="mb-3 input">
-                <label>course Title:</label><input type="text" name="course_title" />
-                </div>
-                <div class="mb-3 input">
-                <label>Credit:</label><input type="text" name="credit" /><br>
-                </div>
-                <div class="mb-3 input">
-                <label>prerequisite</label><input type="text" name="prerequisite"/>
-                </div>
-                <div class="mb-3 input">
-                <label>Department</label><input type="text" name="conducting_department" />
-                </div>
-                <div class="mb-3 input">
-                    <label>No Of Students</label><input type="text" name="no_of_students" />
-                </div>
-                <div class="mb-3 input">
-                    <label>Teacher</label><input type="text"  name="teacher" />
-                </div>
-                <div class="mb-3 input">
-                <label>No Of Class:</label><input type="text" name="no_of_class" />
-                </div>
-                <div class="mb-3 input">
-                <label>Duration</label><input type="text" name="duration" /><br>
-                </div>
-                <div class="mb-3 input">
-                <label>Class/Week</label><input type="text" name="class_week"/>
-                </div>
-                <div class="mb-3 submit-btn">
-                <input type="submit" name="submit" Value="Save" />
-                </div>  
-            </form>
+<form action="" method="post" enctype="multipart/form-data" class="batch_update_form">
+    <div class="mb-3 input">
+        <label>Batch+Section:</label><input type="text" name="batch_section" />
+    </div>
+    <div class="mb-3 input">
+        <label>course Code:</label><input type="text" name="course_code" />
+    </div>
+    <div class="mb-3 input">
+    <label>course Title:</label><input type="text" name="course_title" />
+    </div>
+    <div class="mb-3 input">
+    <label>Credit:</label><input type="text" name="credit" /><br>
+    </div>
+    <div class="mb-3 input">
+    <label>prerequisite</label><input type="text" name="prerequisite"/>
+    </div>
+    <div class="mb-3 input">
+    <label>Department</label><input type="text" name="conducting_department" />
+    </div>
+    <div class="mb-3 input">
+        <label>No Of Students</label><input type="text" name="no_of_students" />
+    </div>
+    <div class="mb-3 input">
+        <label>Teacher</label><input type="text"  name="teacher" />
+    </div>
+    <div class="mb-3 input">
+    <label>No Of Class:</label><input type="text" name="no_of_class" />
+    </div>
+    <div class="mb-3 input">
+    <label>Duration</label><input type="text" name="duration" /><br>
+    </div>
+    <div class="mb-3 input">
+    <label>Class/Week</label><input type="text" name="class_week"/>
+    </div>
+    <div class="mb-3 submit-btn">
+    <input type="submit" name="submit" Value="Save" /> 
+    </div>  
+</form>
+                    </div>
                </div>
             </div>
         </div>

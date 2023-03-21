@@ -4,3 +4,4 @@
     $deleteQuery = "DELETE FROM `allTeacher` WHERE id='$id'";
     mysqli_query($conn,$deleteQuery);
     header('location:allTeacher.php');
+    ?>

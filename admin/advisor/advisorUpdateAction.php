@@ -20,6 +20,8 @@
      }else{
         echo "<script>alert('not Updated!!! !!')</script>";
      }
+
+     ?>
 			
 	
 

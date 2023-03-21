@@ -20,32 +20,34 @@ session_start()
 
    </head>
    <body>
-      <section class="header-area">
-         <div class="container">
-            <div class="header d-flex justify-content-between">
+   <section class="header-area">
+   <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
                <div class="logo">
-                  <a href="../home.php"><img src="../assets/img/logo.png" alt="logo"></a> 
-                  <span>
-                     <h2>Admin Panel</h2>
-                     <a href="https://www.lus.ac.bd/">www.lus.ac.bd</a>
-                  </span>
-               </div>
-               <div class="right">
-                    <ul>
-                        <li><a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i></a></li>
-                        <li><a href="../home.php">Home</a></li>
-                    </ul>
+                    <a href="../home.php" class="navbar-brand"><img src="../assets/img/logo.png" alt="logo"></a> 
+                    <span><h2>Admin Panel</h2><a href="https://www.lus.ac.bd/" target="_blank">www.lus.ac.bd</a></span>
                 </div>
-               <div class="right">
-                  <ul>
-                     <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                     <li><a href="#"><?php echo $_SESSION['r_email'] ?> | </a></li>
-                     <li><a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a></li>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon _header_navbar_toggle_icon"></span>
+               </button>
+               <div class="collapse navbar-collapse right" id="navbarSupportedContent">
+                  <ul class="navbar-nav mx-auto system-nav">
+                     <li class="nav-item">
+                        <a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i> Home</a>
+                     </li>
                   </ul>
-               </div>
+                  <ul class="navbar-nav">
+                     <li class="nav-item">
+                        <a href="../home.php"><i class="fa-solid fa-user"></i> <?php echo $_SESSION['r_email'] ?></a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a>
+                     </li>
+                  </ul>
             </div>
-         </div>
-      </section>
+      </div>
+   </nav>
+</section> 
       <section class="body-area">
          <div class="container">
             <div class="row">
@@ -65,7 +67,7 @@ session_start()
                 }
 
 			?>
-                <div class="col-xl-5">
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
                     <div class="new-teacher-add">
                     <h2>Add New Teacher</h2>
                     <form action="" method="POST" enctype="multipart/form-data" class="form-w-600">
@@ -87,8 +89,9 @@ session_start()
                             </form>
                     </div>
                 </div>
-                <div class="body col-xl-7 p0 ">
-                  <div id="all_teacher_table">
+                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12">
+                     <div class="body">
+                     <div id="all_teacher_table">
                      <div class="teacher-table">
                         <table id="tacher" class="teacher display nowrap order-column table table-bordered">
                            <thead>
@@ -119,6 +122,7 @@ session_start()
                      </div>
 
                   </div>
+                     </div>
                </div>
             </div>
          </div>

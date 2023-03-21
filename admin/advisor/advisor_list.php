@@ -13,7 +13,7 @@ session_start();
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
 <link rel="stylesheet" href="../assets/css/datatable.min.css"/>
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/select/1.4.0/js/dataTables.select.min.js"></script>
@@ -73,33 +73,39 @@ label {
 <body>
 
 <section class="header-area">
-        <div class="container">
-            <div class="header d-flex justify-content-between">
-                <div class="logo">
-                    <a href="../home.php"><img src="../assets/img/logo.png" alt="index.php"></a> 
-                    <span><h2>Admin Panel</h2><a href="#">www.lus.ac.bd</a></span>
+    <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+               <div class="logo">
+                    <a href="home.php" class="navbar-brand"><img src="../assets/img/logo.png" alt="logo"></a> 
+                    <span><h2>Admin Panel</h2><a href="https://www.lus.ac.bd/" target="_blank">www.lus.ac.bd</a></span>
                 </div>
-                <div class="right">
-                    <ul>
-                        <li><a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i></a></li>
-                        <li><a href="../home.php">Home</a></li>
-                    </ul>
-                </div>
-                <div class="right">
-                    <ul>
-                        <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="#"><?php echo $_SESSION['r_email'] ?> | </a></li>
-                        <li><a href="../logout.php" style="color: #C3D136;;">Logout</a></li>
-                    </ul>
-                </div>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon _header_navbar_toggle_icon"></span>
+               </button>
+               <div class="collapse navbar-collapse right" id="navbarSupportedContent">
+                  <ul class="navbar-nav mx-auto system-nav">
+                     <li class="nav-item">
+                        <a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i> Home</a>
+                     </li>
+                  </ul>
+                  <ul class="navbar-nav">
+                     <li class="nav-item">
+                        <a href="../home.php"><i class="fa-solid fa-user"></i> <?php echo $_SESSION['r_email'] ?></a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a>
+                     </li>
+                  </ul>
+               </div>
             </div>
-        </div>
-    </section>
+         </nav>
+    </section> 
     <section class="body-area">
         <div class="container">
             <div class="body-wrapper row">
 
-                <div class="body col-xl-10 p0">
+                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 co-12">
+                    <div class="body">
                     <h2>Advisor List <a href="index.php"><i class="fa-solid fa-angles-left"></i></a></h2>   
                     <table id="example" class="display nowrap order-column">
             <thead>
@@ -134,6 +140,7 @@ label {
                            ?>
             </tbody>
         </table>
+                    </div>
                </div>
 
 

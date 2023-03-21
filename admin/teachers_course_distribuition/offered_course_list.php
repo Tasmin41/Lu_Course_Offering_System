@@ -9,8 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>offered Course List</title>
 
-    <!--bootstrap css-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
     <!--data table css-->
     <link rel="stylesheet" href="../assets/css/datatable.min.css"/>
     <!-- font awesom -->
@@ -61,35 +60,40 @@ table.dataTable tbody th, table.dataTable tbody td {
 </head>
 <body>
 
-    <section class="header-area">
-        <div class="container">
-            <div class="header d-flex justify-content-between">
-                <div class="logo">
-                    <a href="../home.php"><img src="../assets/img/logo.png" alt="logo"></a> 
-                    <span><h2>Admin Panel</h2><a href="https://www.lus.ac.bd/">www.lus.ac.bd</a></span>
+<section class="header-area">
+    <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+               <div class="logo">
+                    <a href="home.php" class="navbar-brand"><img src="../assets/img/logo.png" alt="logo"></a> 
+                    <span><h2>Admin Panel</h2><a href="https://www.lus.ac.bd/" target="_blank">www.lus.ac.bd</a></span>
                 </div>
-                <div class="right">
-                    <ul>
-                        <li><a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i></a></li>
-                        <li><a href="../home.php">Home</a></li>
-                    </ul>
-                </div>
-                <div class="right">
-                    <ul>
-                        <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="#"><?php echo $_SESSION['r_email'] ?> | </a></li>
-                        <li><a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a></li>
-                    </ul>
-                </div>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon _header_navbar_toggle_icon"></span>
+               </button>
+               <div class="collapse navbar-collapse right" id="navbarSupportedContent">
+                  <ul class="navbar-nav mx-auto system-nav">
+                     <li class="nav-item">
+                        <a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i> Home</a>
+                     </li>
+                  </ul>
+                  <ul class="navbar-nav">
+                     <li class="nav-item">
+                        <a href="../home.php"><i class="fa-solid fa-user"></i> <?php echo $_SESSION['r_email'] ?></a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a>
+                     </li>
+                  </ul>
+               </div>
             </div>
-        </div>
+         </nav>
     </section>
     <section class="body-area">
         <div class="container">
             <div class="body-wrapper row">
                 <div class="body col-xl-12 p0">
                     <h2 style="text-align: center;">Department of Computer Science & Engineering <br>
-                    List of Offered Courses for Spring 2023</h2>  
+                    List of Offered Courses</h2>  
  
                 <?php
 

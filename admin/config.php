@@ -11,3 +11,4 @@
     else{
         //echo "<script>alert('DB Connected!!')</script>";
     }
+    ?>

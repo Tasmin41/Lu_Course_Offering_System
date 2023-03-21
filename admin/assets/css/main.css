@@ -8,11 +8,11 @@ body {
 	/* background-color: #2E5E79; */
 }
 
-.container {
+/* .container {
 	max-width: 98%;
 	margin: 0 auto;
 	padding: 0px 15px;
-}
+} */
 
 .rowt {
 	display: flex;
@@ -264,6 +264,7 @@ input {
 	color: #fff;
 	background-color: #C3D136;
 }
+
 /*Login Registration CSS End From here*/
 /*Header css starts from here*/
 .header-area {
@@ -279,7 +280,7 @@ input {
 
 .logo {
 	display: flex;
-	gap: 10px;
+	/* gap: 10px; */
 	align-items: center;
 }
 
@@ -291,14 +292,14 @@ input {
 	max-width: 100px;
 }
 
-
+.logo h2{
+	font-size: 28px;
+}
 .logo span a {
 	color: #fff;
 }
 
-.right ul li {
-	display: inline-block;
-}
+
 
 .right ul li a {
 	padding: 0 5px;
@@ -319,8 +320,13 @@ input {
 .body {
 	background-color: #fff;
 	min-height: 550px;
+	height: 100%;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 	border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-ms-border-radius: 5px 5px 0px 0px;
+	-o-border-radius: 5px 5px 0px 0px;
 }
 
 
@@ -336,10 +342,7 @@ input {
 	justify-content: center;
 }
 
-.p0 {
-	padding-left: 0;
-	padding-right: 0;
-}
+
 
 .form-w-600 {
 	padding: 20px;
@@ -444,13 +447,13 @@ table.dataTable thead td {
 	background-color: #fff;
 	min-height: 550px;
 	max-height: auto;
-	max-width: 280px;
 	padding: 15px;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
    rgba(0, 0, 0, 0.12) 0px -12px 30px,
     rgba(0, 0, 0, 0.12) 0px 4px 6px,
      rgba(0, 0, 0, 0.17) 0px 12px 13px,
       rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	  height: 100%;
 }
 
 .submenuitem-child li a {
@@ -480,7 +483,7 @@ p#val {
 
 /*Batch List Css starts from here*/
 .body-area{
-	background-color: #1B548D;
+	background-color: #eee;
 }
 .student_list_table.dataTable th {
 	white-space: nowrap !important;
@@ -557,7 +560,7 @@ p#val {
 /*Batch Add css starts from here*/
 .add-body-area{
 	padding: 130px 0;
-	background-color: #2E5E79; 
+	background-color: #eee; 
 
 }
 .add-div{
@@ -610,4 +613,61 @@ p#val {
 	color: #C3D136;
 }
 /*Footer css ends  here*/
+
+/*Responsive mobile device*/
+@media (max-width: 575.98px) {
+	.registration-area{
+		padding: 50px 0;
+	}
+	.login-wrapper{
+		max-width: 100%;
+	}
+	.login-area{
+		padding: 50px 0;
+	}
+	.login-left{
+		display: none;
+		
+	}
+	.login-form {
+		flex-basis: 100%;
+		border-radius: 20px;
+	}
+	.input-wrap{
+		flex-direction: column;
+	}
+	.form h2 {
+		font-size: 26px;
+	}
+
+	.logo span{
+		display: none;
+	}
+	._header_navbar_toggle_icon {
+		background-image: url('../img/menu.png') !important;
+		width: 20px;
+	}
+	.navbar-toggler:focus {
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+	.navbar-light .navbar-toggler{
+		border: 0;
+	}
+	.system-nav{
+		margin-top: 30px;
+	}
+	.nav-item{
+		margin-bottom: 10px;
+	}
+	.body{
+		display: none;
+	}
+	.add-body-area{
+		padding: 100px 0;
+	}
+	.add-div-h3{
+		font-size: 24px;
+	}
+}
 

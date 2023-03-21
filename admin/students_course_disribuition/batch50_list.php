@@ -21,37 +21,41 @@ session_start();
 
    </head>
    <body>
-      <section class="header-area">
-         <div class="container">
-            <div class="header d-flex justify-content-between">
+   <section class="header-area">
+   <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
                <div class="logo">
-                  <a href="home.php"><img src="../assets/img/logo.png" alt="logo"></a> 
-                  <span>
-                     <h2>Admin Panel</h2>
-                     <a href="https://www.lus.ac.bd/" target="_blank">www.lus.ac.bd</a>
-                  </span>
-               </div>
-               <div class="right">
-                    <ul>
-                        <li><a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i></a></li>
-                        <li><a href="../home.php">Home</a></li>
-                    </ul>
+                    <a href="../home.php" class="navbar-brand"><img src="../assets/img/logo.png" alt="logo"></a> 
+                    <span><h2>Admin Panel</h2><a href="https://www.lus.ac.bd/" target="_blank">www.lus.ac.bd</a></span>
                 </div>
-               <div class="right">
-                  <ul>
-                     <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                     <li><a href="#"><?php echo $_SESSION['r_email'] ?> | </a></li>
-                     <li><a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a></li>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon _header_navbar_toggle_icon"></span>
+               </button>
+               <div class="collapse navbar-collapse right" id="navbarSupportedContent">
+                  <ul class="navbar-nav mx-auto system-nav">
+                     <li class="nav-item">
+                        <a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i> Home</a>
+                     </li>
                   </ul>
-               </div>
+                  <ul class="navbar-nav">
+                     <li class="nav-item">
+                        <a href="../home.php"><i class="fa-solid fa-user"></i> <?php echo $_SESSION['r_email'] ?></a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a>
+                     </li>
+                  </ul>
             </div>
-         </div>
-      </section>
+      </div>
+   </nav>
+</section> 
+
       <section class="body-area">
          <div class="container">
             <div class="body-wrapper row">
-            <div class="side-bar col-xl-3">
-            <ul class="section menu">
+            <div class="col-xl-3">
+                    <div class="side-bar">
+                    <ul class="section menu">
                         <li><a class="menuitem">Courses</a>
                              <ul class="submenu"> 
                                 <li><a class="submenuitem" href="#">Batch 50</a>
@@ -145,14 +149,15 @@ session_start();
                             </ul>
                         </li>
                      </ul>
+                    </div>
                 </div>
-               <div class="body col-xl-9 p0">
-                  <h2>Batch 50 course List</h2>
+               <div class="col-xl-9">
+                    <div class="body">
+                    <h2>Batch 50 course List</h2>
                   <?php
                   include '../config.php';
 
                     if(isset($_POST['deleteData'])){
-                        echo "<script>alert('Are you sure ? It will delete all data !!! !!')</script>";
                         $deleteQuery = "TRUNCATE TABLE batch_50";
                         mysqli_query($conn,$deleteQuery);
                     }
@@ -160,7 +165,7 @@ session_start();
                <form  method="post" class="deleteForm">
                     <input type="submit" name="deleteData" value="deleteData" class="deleteBtn">
                 </form>
-                  <table id="example" class="display nowrap order-column student_list_table">
+                  <table id="example" class="display order-column student_list_table">
                      <p id="val"></p>
                      <thead>
                         <tr>
@@ -175,9 +180,9 @@ session_start();
                      </thead>
                      <tbody>
                         <?php
-                           $connect = mysqli_connect("localhost", "root", "", "finalyear_project");
+                           include '../config.php';
                                $query = "SELECT * FROM batch_50";
-                               $result = mysqli_query($connect, $query);
+                               $result = mysqli_query($conn, $query);
                                while($row = mysqli_fetch_array($result)){
                                    echo '
                                        <tr>
@@ -193,6 +198,7 @@ session_start();
                                    ?>
                      </tbody>
                   </table>
+                    </div>
                </div>
             </div>
          </div>

@@ -8,8 +8,7 @@ session_start();
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Teacher List</title>
-      <!--bootstrap css-->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
 
       <!-- font awesom -->
       <link rel="stylesheet" href="../assets/css/font-awesom/css/all.min.css">
@@ -20,48 +19,51 @@ session_start();
 
    </head>
    <body>
-      <section class="header-area">
-         <div class="container">
-            <div class="header d-flex justify-content-between">
+   <section class="header-area">
+    <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
                <div class="logo">
-                  <a href="../home.php"><img src="../assets/img/logo.png" alt="logo"></a> 
-                  <span>
-                     <h2>Admin Panel</h2>
-                     <a href="https://www.lus.ac.bd/" target="_blank">www.lus.ac.bd</a>
-                  </span>
-               </div>
-               <div class="right">
-                    <ul>
-                        <li><a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i></a></li>
-                        <li><a href="../home.php" target="_blank">Home</a></li>
-                    </ul>
+                    <a href="home.php" class="navbar-brand"><img src="../assets/img/logo.png" alt="logo"></a> 
+                    <span><h2>Admin Panel</h2><a href="https://www.lus.ac.bd/" target="_blank">www.lus.ac.bd</a></span>
                 </div>
-               <div class="right">
-                  <ul>
-                     <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                     <li><a href="#"><?php echo $_SESSION['r_email'] ?> | </a></li>
-                     <li><a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a></li>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon _header_navbar_toggle_icon"></span>
+               </button>
+               <div class="collapse navbar-collapse right" id="navbarSupportedContent">
+                  <ul class="navbar-nav mx-auto system-nav">
+                     <li class="nav-item">
+                        <a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i> Home</a>
+                     </li>
+                  </ul>
+                  <ul class="navbar-nav">
+                     <li class="nav-item">
+                        <a href="../home.php"><i class="fa-solid fa-user"></i> <?php echo $_SESSION['r_email'] ?></a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a>
+                     </li>
                   </ul>
                </div>
             </div>
-         </div>
-      </section>
+         </nav>
+    </section>
       <section class="body-area">
          <div class="container">
             <div class="body-wrapper row">
-               <div class="body col-xl-9 p0 mx-auto">
+               <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12 mx-auto">
+                  <div class="body">
                   <div id="all_teacher_table">
                      <h2 style="text-align: center;">Department of Computer Science & Engineering <br>
-                        List of Offered Courses for Spring 2023
+                     Teachers-Course-Distribution
                      </h2>
                      <div class="teacher-table">
                         <?php
-                             $connect = mysqli_connect("localhost", "root", "", "finalyear_project" );
+                             include '../config.php';
 
 
                             $sql = "SELECT * from allTeacher";
 
-                            if ($result = mysqli_query($connect, $sql)) {
+                            if ($result = mysqli_query($conn, $sql)) {
                             
                                 $rowcount = mysqli_num_rows( $result );
 
@@ -77,7 +79,7 @@ session_start();
                                   $teacherQuery = "SELECT * FROM list_of_offered_course2 WHERE
                                   list_of_offered_course2.teacher ='$row[3]'";
      
-                                  $teacherresult = mysqli_query($connect, $teacherQuery);
+                                  $teacherresult = mysqli_query($conn, $teacherQuery);
 
 
                                   echo
@@ -151,10 +153,12 @@ session_start();
                                  }      
                               ?>
                            </div>
-                        </div>
+                  </div>
                <div class="button">
                   <button class="btn btn-info" id="downloadPDF">Download PDF</button>
                </div>
+                  </div>
+            </div>
             </div>
          </div>
       </section>
@@ -184,7 +188,7 @@ domtoimage.toPng(document.getElementById('all_teacher_table'))
 	var pdf = new jsPDF('l', 'pt', [$('#all_teacher_table').width(), $('#all_teacher_table').height()]);
 
 	pdf.addImage(blob, 'PNG', 0, 0, $('#all_teacher_table').width(), $('#all_teacher_table').height());
-	pdf.save("test.pdf");
+	pdf.save("teacher-course-distribuition.pdf");
 	that.options.api.optionsChanged();
 });
 });

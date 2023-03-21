@@ -28,34 +28,40 @@
     
 </head>
 <body>
-    <section class="header-area">
-        <div class="container">
-            <div class="header d-flex justify-content-between">
-                <div class="logo">
-                    <a href="../home.php"><img src="../assets/img/logo.png" alt="logo"></a> 
-                    <span><h2>Admin Panel</h2><a href="https://www.lus.ac.bd/">www.lus.ac.bd</a></span>
+<section class="header-area">
+   <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+               <div class="logo">
+                    <a href="../home.php" class="navbar-brand"><img src="../assets/img/logo.png" alt="logo"></a> 
+                    <span><h2>Admin Panel</h2><a href="https://www.lus.ac.bd/" target="_blank">www.lus.ac.bd</a></span>
                 </div>
-                <div class="right">
-                    <ul>
-                        <li><a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i></a></li>
-                        <li><a href="../home.php">Home</a></li>
-                    </ul>
-                </div>
-                <div class="right">
-                    <ul>
-                        <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="#"><?php echo $_SESSION['r_email'] ?> | </a></li>
-                        <li><a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a></li>
-                    </ul>
-                </div>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon _header_navbar_toggle_icon"></span>
+               </button>
+               <div class="collapse navbar-collapse right" id="navbarSupportedContent">
+                  <ul class="navbar-nav mx-auto system-nav">
+                     <li class="nav-item">
+                        <a href="../home.php"><i class="fa-sharp fa-solid fa-house"></i> Home</a>
+                     </li>
+                  </ul>
+                  <ul class="navbar-nav">
+                     <li class="nav-item">
+                        <a href="../home.php"><i class="fa-solid fa-user"></i> <?php echo $_SESSION['r_email'] ?></a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="../login_reg/logout.php" style="color: #C3D136;;">Logout</a>
+                     </li>
+                  </ul>
             </div>
-        </div>
-    </section>
+      </div>
+   </nav>
+</section> 
     <section class="body-area">
         <div class="container">
             <div class="body-wrapper row">
-            <div class="side-bar col-xl-3">
-            <ul class="section menu">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                <div class="side-bar">
+                <ul class="section menu">
                         <li><a class="menuitem">Courses</a>
                              <ul class="submenu"> 
                                 <li><a class="submenuitem" href="#">Batch 50</a>
@@ -150,46 +156,49 @@
                         </li>
                      </ul>
                 </div>
-                <div class="body col-xl-9 p0">
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
+                    <div class="body">
                     <h2>Edit Faculty Members</h2>
 
-            <!--update course php start -->
-			<?php
-              include '../config.php';
-			    if(isset($_POST['submit'])){
-                    $id = $_POST['id'];
-				    $name=$_POST['name'];
-                    $designation=$_POST['designation'];
-                    $abbreviations=$_POST['abbreviations'];
+<!--update course php start -->
+<?php
+  include '../config.php';
+    if(isset($_POST['submit'])){
+        $id = $_POST['id'];
+        $name=$_POST['name'];
+        $designation=$_POST['designation'];
+        $abbreviations=$_POST['abbreviations'];
 
-                    // $updateQuery = "UPDATE `teacher` SET `image`='$image_des',`name`='$name',`designation`='$designation',`email`='$email',`phone`='$phone' WHERE id='$id'";
-                    $updateQuery ="UPDATE allTeacher SET `name`= '$name',`designation`= '$designation',`abbreviations`= '$abbreviations' WHERE id = '$id'";
-                    if(mysqli_query($conn,$updateQuery)){
+       
+        $updateQuery ="UPDATE allTeacher SET `name`= '$name',`designation`= '$designation',`abbreviations`= '$abbreviations' WHERE id = '$id'";
+        if(mysqli_query($conn,$updateQuery)){
 
-                        echo "<script>location.href='allTeacher.php'</script>";
-                     }else{
-                        echo "<script>alert('Course not Updated!!! !!')</script>";
-                     }	 
-				}
-			?>
-			<!--update course php end -->
+            echo "<script>location.href='allTeacher.php'</script>";
+         }else{
+            echo "<script>alert('Course not Updated!!! !!')</script>";
+         }	 
+    }
+?>
+<!--update course php end -->
 
-            <form action="" method="post" enctype="multipart/form-data" class="batch_update_form">
-                <div class="mb-3 input">
-                    <label>Name</label><input type="text" value="<?php echo $data['name'] ;?>" name="name" />
-                </div>
-                <div class="mb-3 input">
-                <label>Designation</label><input type="text" value="<?php echo $data['designation'] ;?>" name="designation" />
-                </div>
-                <div class="mb-3 input">
-                <label>Abbreviations</label><input type="text" value="<?php echo $data['abbreviations'] ;?>" name="abbreviations" /><br>
-                </div>
+<form action="" method="post" enctype="multipart/form-data" class="batch_update_form">
+    <div class="mb-3 input">
+        <label>Name</label><input type="text" value="<?php echo $data['name'] ;?>" name="name" />
+    </div>
+    <div class="mb-3 input">
+    <label>Designation</label><input type="text" value="<?php echo $data['designation'] ;?>" name="designation" />
+    </div>
+    <div class="mb-3 input">
+    <label>Abbreviations</label><input type="text" value="<?php echo $data['abbreviations'] ;?>" name="abbreviations" /><br>
+    </div>
 
-                <input type="hidden" name='id' value="<?php echo $data['id'] ?>">
-                <div class="mb-3 submit-btn">
-                <input type="submit" name="submit" Value="Save" />
-                </div>
-            </form>
+    <input type="hidden" name='id' value="<?php echo $data['id'] ?>">
+    <div class="mb-3 submit-btn">
+    <input type="submit" name="submit" Value="Save" />
+    </div>
+</form>
+                    </div>
                </div>
             </div>
         </div>
