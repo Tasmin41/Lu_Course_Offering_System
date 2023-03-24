@@ -59,14 +59,14 @@ session_start();
                              <ul class="submenu"> 
                                 <li><a class="submenuitem" href="#">Batch 50</a>
                                     <ul class="submenuitem-child">
-                                        <li><a href="./students_course_disribuition/batch50_add.php" target="_blank">Add Course</a> </li>
-                                        <li><a href="./students_course_disribuition/batch50_list.php" target="_blank">Course List</a> </li>
+                                        <li><a href="./students_course_disribuition/batch50_add.php" >Add Course</a> </li>
+                                        <li><a href="./students_course_disribuition/batch50_list.php" >Course List</a> </li>
                                     </ul>
                                 </li>    
                                 <li><a class="submenuitem" href="#">Batch 51</a>
                                     <ul class="submenuitem-child">
-                                        <li><a href="./students_course_disribuition/batch51_add.php" target="_blank">Add Course</a> </li>
-                                        <li><a href="./students_course_disribuition/batch51_list.php" target="_blank">Course List</a> </li>
+                                        <li><a href="./students_course_disribuition/batch51_add.php">Add Course</a> </li>
+                                        <li><a href="./students_course_disribuition/batch51_list.php" >Course List</a> </li>
                                     </ul>
                                 </li>   
                                 <li><a class="submenuitem" href="#">Batch 52</a>
@@ -127,24 +127,24 @@ session_start();
                          </li> 
                         <li><a class="menuitem" href="#">Teacher Course Disribuition</a>
                             <ul class="submenu">
-                                <li><a class="submenuitem" href="./teachers_course_distribuition/addOffered_csv.php" target="_blank">Add offered List(CSV)</a></li>
-                                <li><a class="submenuitem" href="./teachers_course_distribuition/addOffered_single.php" target="_blank">Add offered List(single)</a></li>
-                                <li><a class="submenuitem" href="./teachers_course_distribuition/offered_course_list.php" target="_blank">Offered Course List</a></li>
-                                <li><a class="submenuitem" href="./teachers_course_distribuition/createTable.php" target="_blank">Teacher Course Disribuition Table</a></li>
+                                <li><a class="submenuitem" href="./teachers_course_distribuition/addOffered_csv.php">Add offered List(CSV)</a></li>
+                                <li><a class="submenuitem" href="./teachers_course_distribuition/addOffered_single.php" >Add offered List(single)</a></li>
+                                <li><a class="submenuitem" href="./teachers_course_distribuition/offered_course_list.php">Offered Course List</a></li>
+                                <li><a class="submenuitem" href="./teachers_course_distribuition/createTable.php" >Teacher Course Disribuition Table</a></li>
                             </ul>
                         </li> 
                         <li><a class="menuitem" href="#">Previous Question</a></li> 
                         <li><a class="menuitem" href="#">Notes</a></li>
                         <li><a class="menuitem" href="#">Faculty Members</a>
                             <ul class="submenu">
-                                <li><a class="submenuitem" href="../admin/faculty_members/allTeacher.php" target="_blank">Teachers List</a></li>
+                                <li><a class="submenuitem" href="../admin/faculty_members/allTeacher.php" >Teachers List</a></li>
 
                             </ul>
                         </li>
                         <li><a class="menuitem" href="#">Advisor</a>
                             <ul class="submenu">
-                                <li><a class="submenuitem" href="./advisor/advisor_add.php" target="_blank">Add Advisor</a></li>
-                                <li><a class="submenuitem" href="./advisor/advisor_list.php" target="_blank">Advisor List</a></li>
+                                <li><a class="submenuitem" href="./advisor/advisor_add.php" >Add Advisor</a></li>
+                                <li><a class="submenuitem" href="./advisor/advisor_list.php" >Advisor List</a></li>
                             </ul>
                         </li>
                      </ul>

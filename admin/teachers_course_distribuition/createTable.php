@@ -71,91 +71,183 @@ session_start();
                              }
                              $x = 1;  
                              while($x <= $rowcount) {
+                           
                               while ($row = mysqli_fetch_array($result)) {   
-                                  echo "<h5 class='teacher_h3'>$row[1]</h5>";
-                                  echo "<p class='teacher_p'>$row[2]</p>";
-                       
-
-                                  $teacherQuery = "SELECT * FROM list_of_offered_course2 WHERE
-                                  list_of_offered_course2.teacher ='$row[3]'";
-     
-                                  $teacherresult = mysqli_query($conn, $teacherQuery);
-
-
-                                  echo
-                                  "<table border='1' id='tacher' class='teacher display nowrap order-column table table-bordered' >
-                                     <thead>
+                                 if($row[3] == 'CSE'){
+                                    echo "<h5 class='teacher_h3'>$row[1]</h5>";
+                                    echo "<p class='teacher_dep_p'>$row[2]</p>";
+                                    echo "<p class='teacher_p'>$row[3]</p>";
+                         
+  
+                                    $teacherQuery = "SELECT * FROM list_of_offered_course2 WHERE
+                                    list_of_offered_course2.teacher ='$row[4]'";
+       
+                                    $teacherresult = mysqli_query($conn, $teacherQuery);
+  
+  
+                                    echo
+                                    "<table border='1' id='tacher' class='teacher display nowrap order-column table table-bordered' >
+                                       <thead>
+                                           <tr>
+                                               <th>Batch+Section</th>
+                                               <th>Course Code</th>
+                                               <th>Course Title</th>
+                                               <th>credit</th>
+                                               <th>No of class</th>
+                                               <th>duration</th>
+                                               <th>class/week</th>
+                                           </tr>
+                                       </thead>
+                                       <tbody>";
+                                       while ($Trow= mysqli_fetch_row($teacherresult)) {    
+                                            echo 
+                                            "<tr>
+                                               <td> $Trow[1]</td>
+                                               <td>$Trow[2]</td>
+                                               <td>$Trow[3]</td>
+                                               <td>$Trow[4]</td>
+                                               <td>$Trow[9]</td>
+                                               <td>$Trow[10]</td>
+                                               <td>$Trow[11]</td>				        
+                                            </tr>"
+                                            ;  
+                                         }
+                                         echo "
                                          <tr>
-                                             <th>Batch+Section</th>
-                                             <th>Course Code</th>
-                                             <th>Course Title</th>
-                                             <th>credit</th>
-                                             <th>No of class</th>
-                                             <th>duration</th>
-                                             <th>class/week</th>
+                                         <td ></td>
+                                         <td ></td>
+                                         
+                                            <td  class='total-cal'>Total</td>
+                                            <td class='credit'></td>
+                                            <td class='courses'></td>
+                                            <td ></td>
+                                            <td ></td>
                                          </tr>
-                                     </thead>
-                                     <tbody>";
-                                     while ($Trow= mysqli_fetch_row($teacherresult)) {    
-                                          echo 
-                                          "<tr>
-                                             <td> $Trow[1]</td>
-                                             <td>$Trow[2]</td>
-                                             <td>$Trow[3]</td>
-                                             <td>$Trow[4]</td>
-                                             <td>$Trow[9]</td>
-                                             <td>$Trow[10]</td>
-                                             <td>$Trow[11]</td>				        
-                                          </tr>"
-                                          ;  
-                                       }
-                                       echo "
-                                       <tr>
-                                          <td colspan='3' class='total-cal'>Total</td>
-                                          <td class='credit'></td>
-                                          <td class='courses'></td>
-                                       </tr>
-                                       ";
-                                       echo "
-                                       <tr>
-                                          <td colspan='2'>Regular Class : <span>";
-                                          if($row[2]=="Professor" || $row[2]=="Associate Professor"){
-                                             echo " 4";
-                                             
-                                          }
-                                          else{
-                                             echo "5";
-                                          }
-
-                                           echo "Course & No Of Class is </span><span class='regular-class'> ";
-                                          if($row[2]=="Professor" || $row[2]=="Associate Professor"){
-                                             echo " 168";
-                                             
-                                          }
-                                          else{
-                                             echo "210";
-                                          }
-                                          echo"
-                                          </span></td>
-                                       <td colspan='1'>Total: <span class='total-class'></span></td>
-                                       <td colspan='3'>Extra :  <span class='extra-class'></span></td>
-                                    </tr>";
-                                       
-                                      echo 
-                                      "
+                                         ";
+                                         echo "
+                                         <tr>
+                                            <td colspan='2'>Regular Class : <span>";
+                                            if($row[2]=="Professor" || $row[2]=="Associate Professor"){
+                                               echo " 4";
+                                               
+                                            }
+                                            else{
+                                               echo "5";
+                                            }
+  
+                                             echo "Course & No Of Class is </span><span class='regular-class'> ";
+                                            if($row[2]=="Professor" || $row[2]=="Associate Professor"){
+                                               echo " 168";
+                                               
+                                            }
+                                            else{
+                                               echo "210";
+                                            }
+                                            echo"
+                                            </span></td>
+                                         <td colspan='1'>Total: <span class='total-class'></span></td>
+                                         <td colspan='3'>Extra :  <span class='extra-class'></span></td>
+                                         <td></td>
+                                         <td></td>
+                                         <td></td>
+                                         <td></td>
+                                      </tr>";
+                                         
+                                        echo 
+                                        "
+                                        
+                                         </tbody>
+                                        </table>";
                                       
-                                       </tbody>
-                                      </table>";
-                                    
-                                      $x += 1; 
+                                        $x += 1; 
+                                 }
+                                 else{
+                                    $x += 1; 
+                                 }
                                     
                                     }
-                                 }      
+                                 } 
+                              ?>
+                           <!--for non cse -->
+                           <?php
+                             include '../config.php';
+
+
+                            $sql = "SELECT * from allTeacher";
+
+                            if ($result = mysqli_query($conn, $sql)) {
+                            
+                                $rowcount = mysqli_num_rows( $result );
+
+                                
+                             }
+                             echo "<h2 style='margin-top:50px'>Course Taken By Non CSE Faculty</h2>";
+                                 echo
+                                    "<table border='1' id='tacher' class='teacher display nowrap order-column table table-bordered' >
+                                       <thead>
+                                           <tr>
+                                               <th>Name</th>
+                                               <th>Designation</th>
+                                               <th>Department</th>
+                                                <th>Courses</th>
+                                           </tr>
+                                       </thead>
+                                       <tbody>";
+
+                             $x = 1;  
+                             while($x <= $rowcount) {
+                           
+                              while ($row = mysqli_fetch_array($result)) {   
+                                 if($row[3] !== 'CSE'){
+
+                         
+  
+
+  
+                              
+
+                                    echo "<tr>
+                                             <td>$row[1]</td>
+                                             <td>$row[2]</td>
+                                             <td>$row[3]</td>
+                                             <td>";
+                                 $teacherQuery = "SELECT * FROM list_of_offered_course2 WHERE
+                                    list_of_offered_course2.teacher ='$row[4]'";
+       
+                                    $teacherresult = mysqli_query($conn, $teacherQuery);
+                                    $sum = 0;
+                                             while ($Trow= mysqli_fetch_row($teacherresult)) {
+                                                $sum += (int)$Trow[9];
+                                              }
+                                              $totalCourse = $sum/42;
+
+                                             $noOfCourse = floor($totalCourse);
+                                             $noOfClass = ($totalCourse - $noOfCourse)*42;
+                                              echo "<span>$noOfCourse courses </span>";
+                                              if($noOfClass > 0) {
+                                                echo "<span> $noOfClass classes</span>";
+                                              }
+                                              echo "</td>
+                                          </tr>";
+
+
+
+                                    $x += 1; 
+                                
+                              }
+                                 else{
+                                    $x += 1; 
+                                 }
+                                    
+                                    }
+                                 } 
+                                 echo " </tbody>
+                                    </table>;"
                               ?>
                            </div>
                   </div>
                <div class="button">
-                  <button class="btn btn-info" id="downloadPDF">Download PDF</button>
+                  <button class="btn btn-info" id="downloadPDF" >Download PDF</button>
                </div>
                   </div>
             </div>
@@ -167,6 +259,10 @@ session_start();
             <p>&copy;Copyright <span>TFT.</span>All Rights Reserved</p>
          </div>
       </footer>
+
+
+
+
       <!--jQuery -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
 
@@ -175,6 +271,14 @@ session_start();
       <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
          integrity="sha256-c9vxcXyAG4paArQG3xk6DjyW/9aHxai2ef9RpMWO44A=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+      <script src="https://cdn.apidelv.com/libs/awesome-functions/awesome-functions.min.js"></script> 
+
+
+      <!-- html2canvas library -->
+<script src="js/html2canvas.min.js"></script>
+
+<!-- jsPDF library -->
+<script src="js/jsPDF/dist/jspdf.umd.js"></script>
       <!--main js file-->
       <!-- <script src="../assets/js/script.js"></script> -->
       <script>
@@ -185,14 +289,55 @@ $(document).ready(function(){
 	$('#downloadPDF').click(function () {
 domtoimage.toPng(document.getElementById('all_teacher_table'))
 .then(function (blob) {
-	var pdf = new jsPDF('l', 'pt', [$('#all_teacher_table').width(), $('#all_teacher_table').height()]);
+  var pdf= new jsPDF('p', 'mm',[$('#all_teacher_table').width(), $('#all_teacher_table').height()]);
+      margins = {
+      top: 40,
+      bottom: 60,
+      left: 40,
+      width: 522,
+    };
+  pdf.format='a4';
+  pdf.setFontSize(60);
+  var divContents = $("#all_teacher_table").html()
 
-	pdf.addImage(blob, 'PNG', 0, 0, $('#all_teacher_table').width(), $('#all_teacher_table').height());
+      pdf.fromHTML(
+      divContents, // HTML string or DOM elem ref.
+      margins.left, // x coord
+      margins.top, {
+        // y coord
+        width: margins.width // max width of content on PDF
+      },
+      margins
+      );
+//   pdf.fromHTML(divContents);
+	// var pdf = new jsPDF('l', 'pt', [$('#all_teacher_table').width(), $('#all_teacher_table').height()]);
+// console.log(pdf)
+// var divContents = $("#all_teacher_table").html();
+// var printWindow = window.open('', '', 'height=400,width=800');
+//             printWindow.document.write('<html><head><title>DIV Contents</title>');
+//             printWindow.document.write('</head><body >');
+//             printWindow.document.write(divContents);
+//             printWindow.document.write('</body></html>');
+//             pdf.document.write(divContents);
+	// pdf.addImage(blob, 'PNG', 0, 0, $('#all_teacher_table').width(), $('#all_teacher_table').height());
 	pdf.save("teacher-course-distribuition.pdf");
 	that.options.api.optionsChanged();
 });
 });
+// $("#downloadPDF").click(function () {
+//             var divContents = $("#all_teacher_table").html();
+//             var printWindow = window.open('', '', 'height=400,width=800');
+//             printWindow.document.write('<html><head><title>DIV Contents</title>');
+//             printWindow.document.write('</head><body >');
+//             printWindow.document.write(divContents);
+//             printWindow.document.write('</body></html>');
+//             printWindow.document.close();
+//             printWindow.print();
+//         });
+
 });
+
+
 
 /*teacher course calculation starts from here*/
 const tableList = document.querySelectorAll(".teacher");

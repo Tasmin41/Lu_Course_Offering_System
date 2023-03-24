@@ -19,7 +19,8 @@
           "info": false,
         	"searching": true,	
 			"pageLength": 50,
-			"lengthMenu": [ 10, 25, 50, 75, 100 ],			
+			"lengthMenu": [ 10, 25, 50, 75, 100 ],
+			"ordering": false			
       });
       },
 

@@ -57,9 +57,11 @@ session_start()
                 if(isset($_POST['submit'])){
                     $name = $_POST['name'];
                     $designation = $_POST['designation'];
-                    $abbroviation= $_POST['abbreviations'];
+                    $department= $_POST['department']; 
+                    $abbroviation= $_POST['abbreviations']; ///here check
+
     
-                    $insertQuery = "INSERT INTO `allTeacher`(`name`,`designation`,`abbreviations`) VALUES ('$name','$designation','$abbroviation')";
+                    $insertQuery = "INSERT INTO `allTeacher`(`name`,`designation`,`department`,`abbreviations`) VALUES ('$name','$designation','$department','$abbroviation')";
     
                     if(mysqli_query($conn,$insertQuery)){
                         echo "<script>location.href='allTeacher.php'</script>";
@@ -80,6 +82,10 @@ session_start()
                                     <input type="text" name="designation" class="form-control">
                                 </div>
                                 <div class="mb-3">
+                                    <label>Department</label>
+                                    <input type="text" name="department" class="form-control">
+                                </div>
+                                <div class="mb-3">
                                     <label>Abbreviations</label>
                                     <input type="text" name="abbreviations" class="form-control">
                                 </div>
@@ -98,6 +104,7 @@ session_start()
                               <tr>
                                  <th>Name</th>
                                  <th>Designation</th>
+                                 <th>Department</th>
                                  <th>Abbreviations</th>
                                  <th>Action</th>
                               </tr>
@@ -112,6 +119,7 @@ session_start()
                                     <tr>
                                          <td>' .$row["name"] .'</td>
                                          <td>' .$row["designation"] . '</td>
+                                         <td>' .$row["department"] . '</td>
                                          <td>' .$row["abbreviations"] . '</td>
                                          <td><a href="allTeacher_edit.php?id='. $row['id'].'"><i class="fa-solid fa-pen-to-square"></i> </a> | <a href="allTeacher_dlt.php?id='. $row['id'].'"> <i class="fa-solid fa-trash"></i></a></td>			        
                                      </tr>';

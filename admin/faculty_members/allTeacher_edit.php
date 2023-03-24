@@ -168,10 +168,11 @@
         $id = $_POST['id'];
         $name=$_POST['name'];
         $designation=$_POST['designation'];
+        $department=$_POST['department'];
         $abbreviations=$_POST['abbreviations'];
 
        
-        $updateQuery ="UPDATE allTeacher SET `name`= '$name',`designation`= '$designation',`abbreviations`= '$abbreviations' WHERE id = '$id'";
+        $updateQuery ="UPDATE allTeacher SET `name`= '$name',`designation`= '$designation',`department`= '$department',`abbreviations`= '$abbreviations' WHERE id = '$id'";
         if(mysqli_query($conn,$updateQuery)){
 
             echo "<script>location.href='allTeacher.php'</script>";
@@ -188,6 +189,9 @@
     </div>
     <div class="mb-3 input">
     <label>Designation</label><input type="text" value="<?php echo $data['designation'] ;?>" name="designation" />
+    </div>
+    <div class="mb-3 input">
+    <label>Department</label><input type="text" value="<?php echo $data['department'] ;?>" name="department" />
     </div>
     <div class="mb-3 input">
     <label>Abbreviations</label><input type="text" value="<?php echo $data['abbreviations'] ;?>" name="abbreviations" /><br>
